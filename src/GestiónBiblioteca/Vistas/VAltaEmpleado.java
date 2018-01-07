@@ -21,6 +21,7 @@ public class VAltaEmpleado extends javax.swing.JFrame {
 
     /**
      * Creates new form VAltaEmpleado
+     * @params ventana
      */
     public VAltaEmpleado(JFrame ventana) {
         initComponents();

@@ -10,7 +10,7 @@ package GestiónBiblioteca;
 
 import java.util.GregorianCalendar;
 
-public class Libro extends Publicación{ 
+public class Libro extends Publicacion{ 
     
     private String editorial;
     private String localidad;

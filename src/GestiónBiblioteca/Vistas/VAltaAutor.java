@@ -1,36 +1,37 @@
-
 package GestiónBiblioteca.Vistas;
 
 import GestiónBiblioteca.Biblioteca;
 import GestiónBiblioteca.Autor;
-import java.awt.event.ActionEvent;
+import GestiónBiblioteca.BibliotecaException;
+import java.awt.HeadlessException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-
 public class VAltaAutor extends javax.swing.JFrame {
-private JFrame principal;
+
+    private final JFrame principal;
+
     public VAltaAutor(JFrame ventana) {
         initComponents();
         principal = ventana;
         principal.setVisible(false);
         this.setVisible(true);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        VOLVER = new javax.swing.JButton();
+        volver = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        ALTAS = new javax.swing.JButton();
+        alta = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        NOMBRE = new javax.swing.JTextField();
+        nombre = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        FECHA = new javax.swing.JTextField();
-        CODIG = new javax.swing.JTextField();
+        fecha = new javax.swing.JTextField();
+        codigo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("\"BIBLIOTECA UNIVERSITARIA\"");
@@ -41,10 +42,10 @@ private JFrame principal;
             }
         });
 
-        VOLVER.setText("VOLVER");
-        VOLVER.addActionListener(new java.awt.event.ActionListener() {
+        volver.setText("VOLVER");
+        volver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VOLVERActionPerformed(evt);
+                volverActionPerformed(evt);
             }
         });
 
@@ -52,10 +53,10 @@ private JFrame principal;
         jLabel1.setForeground(new java.awt.Color(0, 0, 102));
         jLabel1.setText("ALTA NUEVO AUTOR");
 
-        ALTAS.setText("DAR DE ALTA");
-        ALTAS.addActionListener(new java.awt.event.ActionListener() {
+        alta.setText("DAR DE ALTA");
+        alta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ALTASActionPerformed(evt);
+                altaActionPerformed(evt);
             }
         });
 
@@ -70,9 +71,9 @@ private JFrame principal;
         jLabel2.setForeground(new java.awt.Color(0, 51, 102));
         jLabel2.setText("NOMBRE :");
 
-        NOMBRE.addActionListener(new java.awt.event.ActionListener() {
+        nombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NOMBREActionPerformed(evt);
+                nombreActionPerformed(evt);
             }
         });
 
@@ -80,7 +81,7 @@ private JFrame principal;
         jLabel5.setForeground(new java.awt.Color(0, 51, 102));
         jLabel5.setText("Fecha Nacimiento :");
 
-        FECHA.setToolTipText("");
+        fecha.setToolTipText("");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -92,15 +93,15 @@ private JFrame principal;
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addGap(18, 18, 18)
-                        .addComponent(FECHA, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(jLabel2))
                         .addGap(91, 91, 91)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(NOMBRE, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
-                            .addComponent(CODIG))
+                            .addComponent(nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
+                            .addComponent(codigo))
                         .addGap(123, 123, 123)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -110,19 +111,19 @@ private JFrame principal;
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NOMBRE, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(CODIG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FECHA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addContainerGap(79, Short.MAX_VALUE))
         );
 
-        FECHA.getAccessibleContext().setAccessibleName("fecha");
+        fecha.getAccessibleContext().setAccessibleName("fecha");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -132,13 +133,13 @@ private JFrame principal;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(VOLVER))
+                        .addComponent(volver))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(194, 194, 194)
-                        .addComponent(ALTAS, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(alta, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -153,9 +154,9 @@ private JFrame principal;
                 .addGap(28, 28, 28)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(ALTAS, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(alta, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addComponent(VOLVER)
+                .addComponent(volver)
                 .addContainerGap())
         );
 
@@ -168,45 +169,44 @@ private JFrame principal;
         principal.setVisible(true);
     }//GEN-LAST:event_formWindowClosed
 
-    private void VOLVERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VOLVERActionPerformed
+    private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
         // TODO add your handling code here:
         this.dispose();
-    }//GEN-LAST:event_VOLVERActionPerformed
+    }//GEN-LAST:event_volverActionPerformed
 
-    private void NOMBREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NOMBREActionPerformed
+    private void nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NOMBREActionPerformed
+    }//GEN-LAST:event_nombreActionPerformed
 
-    private void ALTASActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ALTASActionPerformed
+    private void altaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altaActionPerformed
         // BOTÓN QUE DA DE ALTA:
-        try{
-                 
-            String nombre = NOMBRE.getText();
-            String codigo = CODIG.getText();
-            String fecha = FECHA.getText();
+        try {
+
+            String auxNombre = nombre.getText();
+            String auxCodigo = codigo.getText();
+            String auxFecha = fecha.getText();
             //aqui se usa el adaptador de la fecha
-            
-            Autor objautor = new Autor(nombre,codigo, fecha);
-            Biblioteca.AltaAutor(objautor);
-            JOptionPane.showMessageDialog(this, "Autor dado de alta.APUNTE SU NUEVO CÓDIGO DE AUTOR:"+objautor.getCodigo(), "Mensaje", JOptionPane.INFORMATION_MESSAGE);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error en alta"+e.getMessage(), "Mensaje", JOptionPane.ERROR_MESSAGE);
-       }            
 
-        
+            Autor objautor = new Autor(auxNombre, auxCodigo, auxFecha);
+            Biblioteca.altaAutor(objautor);
+            JOptionPane.showMessageDialog(this, "Autor dado de alta.APUNTE SU NUEVO CÓDIGO DE AUTOR:" + objautor.getCodigo(), "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+        } catch (BibliotecaException | HeadlessException e) {
+            JOptionPane.showMessageDialog(this, "Error en alta" + e.getMessage(), "Mensaje", JOptionPane.ERROR_MESSAGE);
+        }
 
-    }//GEN-LAST:event_ALTASActionPerformed
+
+    }//GEN-LAST:event_altaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ALTAS;
-    private javax.swing.JTextField CODIG;
-    private javax.swing.JTextField FECHA;
-    private javax.swing.JTextField NOMBRE;
-    private javax.swing.JButton VOLVER;
+    private javax.swing.JButton alta;
+    private javax.swing.JTextField codigo;
+    private javax.swing.JTextField fecha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField nombre;
+    private javax.swing.JButton volver;
     // End of variables declaration//GEN-END:variables
 }

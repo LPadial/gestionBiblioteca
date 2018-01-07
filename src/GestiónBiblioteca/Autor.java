@@ -1,49 +1,48 @@
-
 package GestiónBiblioteca;
 
 import java.io.Serializable;
 
-public class Autor implements Serializable{
-    protected String Nombre;
+public class Autor implements Serializable {
+
+    protected String nombre;
     protected String fecha;
     protected int publicaciones;
     protected boolean activo;
     protected String codigo;
-    
-    
-     //CONSTRUCTOR:
-    public Autor(String Nombre, String codigo, String fecha) {
-        this.Nombre = Nombre;
+
+    //CONSTRUCTOR:
+    public Autor(String nombre, String codigo, String fecha) {
+        this.nombre = nombre;
         this.fecha = fecha;
         this.activo = true;
         this.codigo = codigo;
     }
-    
-    public void desactivar(){
+
+    public void desactivar() {
         this.activo = false;
     }
-    
-    public void activar(){
+
+    public void activar() {
         this.activo = true;
     }
 
-    public String getNombre(){
-        return this.Nombre;
+    public String getNombre() {
+        return this.nombre;
     }
-    
-    public String getFecha(){
+
+    public String getFecha() {
         return this.fecha;
     }
-    
-    public int getPublicaciones(){
+
+    public int getPublicaciones() {
         return this.publicaciones;
     }
-    
-    public boolean getActivo(){
+
+    public boolean getActivo() {
         return this.activo;
     }
-    
-    public String getCodigo(){
+
+    public String getCodigo() {
         return this.codigo;
     }
 }

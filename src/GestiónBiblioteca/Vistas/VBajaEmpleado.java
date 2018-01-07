@@ -140,8 +140,8 @@ public class VBajaEmpleado extends javax.swing.JFrame {
 
     private void bajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bajaActionPerformed
         try {
-            if(Biblioteca.getEmpleado(nombre.getText()) != null){
-                Biblioteca.bajaEmpleado(nombre.getText()); 
+            if (Biblioteca.getEmpleado(nombre.getText()) != null) {
+                Biblioteca.bajaEmpleado(nombre.getText());
                 JOptionPane.showMessageDialog(this, "El empleado ha sido dado de baja.");
             }
         } catch (BibliotecaException ex) {

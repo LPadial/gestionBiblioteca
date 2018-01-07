@@ -2,5 +2,5 @@ package GestiónBiblioteca;
 
 public interface InterfaceEmpleado {
 
-    public boolean informacionEmpleado();
+    public String informacionEmpleado();
 }

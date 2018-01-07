@@ -11,7 +11,7 @@ package GestiónBiblioteca;
 import java.util.GregorianCalendar;
 
 
-public class Revista extends Publicación {
+public class Revista extends Publicacion {
     
     private String periodicidad;
     private int volumen;

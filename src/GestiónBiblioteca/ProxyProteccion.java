@@ -1,9 +1,5 @@
 package GestiónBiblioteca;
 
-import java.awt.Component;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-
 public class ProxyProteccion implements InterfaceEmpleado {
 
     private EmpleadosBD empleados = new EmpleadosBD();
@@ -15,14 +11,15 @@ public class ProxyProteccion implements InterfaceEmpleado {
     }
 
     @Override
-    public boolean informacionEmpleado() {
-     /*   Empleado empaux = empleados.getEmpleado(emp.getId());
-        if ((empaux != null) && empaux.getId().equals(emp.getId()) && empaux.getContraseña().equals(emp.getContraseña())) {
-            return empaux.getId();
-        } else {
-            return "mal";
-        }*/
-        Empleado empaux = empleados.getEmpleado(emp.getId());
-        return (empaux != null) && empaux.getId().equals(emp.getId()) && empaux.getContraseña().equals(emp.getContraseña());
+    public String informacionEmpleado() {
+        Empleado empaux = empleados.getEmpleado(emp.getNombre());
+        boolean b = (empaux != null) && empaux.getNombre().equals(emp.getNombre()) && empaux.getContraseña().equals(emp.getContraseña());
+        return this.emp.toString() + b;
+    }
+    
+    public boolean logueo(){
+        Empleado empaux = empleados.getEmpleado(emp.getNombre());
+        return (empaux != null) && empaux.getNombre().equals(emp.getNombre()) && empaux.getContraseña().equals(emp.getContraseña());
+        
     }
 }

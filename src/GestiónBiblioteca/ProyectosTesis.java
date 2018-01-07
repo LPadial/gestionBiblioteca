@@ -10,7 +10,7 @@ package GestiónBiblioteca;
 
 import java.util.GregorianCalendar;
 
-public abstract class ProyectosTesis extends Publicación {
+public abstract class ProyectosTesis extends Publicacion {
     
     private String tribunal;
     private String entidad;

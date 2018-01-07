@@ -10,15 +10,15 @@ public class Profesor extends Socio{
         codigoSocio += "P";     //CIFRA DEL CODIGO QUE INDICA SI SE ES PROFESOR O ALUMNO.
     }  
     @Override
-        public int MaxDiasLibros(int dias){
+        public int maxDiasLibros(int dias){
             return 10;
         }     
     @Override
-        public int MaxDiasRevistas(int dias){
+        public int maxDiasRevistas(int dias){
             return 6;
         }
     @Override
-        public int MaxDiasProyectos(int dias){
+        public int maxDiasProyectos(int dias){
             return 12;
         }
 }

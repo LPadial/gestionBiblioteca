@@ -1,4 +1,3 @@
-
 package GestiónBiblioteca.Vistas;
 
 import GestiónBiblioteca.Biblioteca;
@@ -13,7 +12,9 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class VProyecto extends javax.swing.JFrame {
-private JFrame principal;
+
+    private final JFrame principal;
+
     public VProyecto(JFrame ventana) {
         initComponents();
         principal = ventana;
@@ -472,40 +473,39 @@ private JFrame principal;
 
     private void ALTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ALTAActionPerformed
         // TODO add your handling code here:
-        try{
+        try {
             String codigo = CODIGO.getText();
             String isbn = ISBN.getText();
-            String titulo = TITULO.getText();  
+            String titulo = TITULO.getText();
             String autores = AUTORES.getText();
             GregorianCalendar fecha = new GregorianCalendar();
-            fecha.setTime((Date)FECHA.getValue());
+            fecha.setTime((Date) FECHA.getValue());
             String paginas1 = PAGINAS.getText();
             Integer paginas = Integer.parseInt(paginas1);
-            boolean coleccion = COLLECTION.isSelected();                           
+            boolean coleccion = COLLECTION.isSelected();
             String materia = MATERIA.getText();
             String foto = FOTO.getText();
             String observacion = observaciones.getText();  //area de texto
-            
-            String titulacion = TITULACION.getText(); 
-            String tribunal = TRIBUNAL.getText();    
+
+            String titulacion = TITULACION.getText();
+            String tribunal = TRIBUNAL.getText();
             String entidad = ENTIDAD.getText();
             String departamento = DEPARTAMENTO.getText();
             String calificacion1 = CALIFICACION.getText();
-            Double calificacion = Double.parseDouble(calificacion1);  
-            
+            Double calificacion = Double.parseDouble(calificacion1);
+
             GregorianCalendar lectura = new GregorianCalendar();
-            lectura.setTime((Date)LECTURA.getValue());
-            
-           
-            ProyectoFinal publi = new ProyectoFinal(titulacion,tribunal,entidad,departamento,calificacion,lectura,codigo,isbn,titulo,autores,fecha,foto,paginas,coleccion,materia,observacion);
-            
-            Biblioteca.AltaPublicación(publi);
-            
+            lectura.setTime((Date) LECTURA.getValue());
+
+            ProyectoFinal publi = new ProyectoFinal(titulacion, tribunal, entidad, departamento, calificacion, lectura, codigo, isbn, titulo, autores, fecha, foto, paginas, coleccion, materia, observacion);
+
+            Biblioteca.altaPublicacion(publi);
+
             JOptionPane.showMessageDialog(this, "PROYECTO dado de alta.", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error en alta:\n" + e.getMessage(), "Mensaje", JOptionPane.ERROR_MESSAGE);
         }
-            
+
     }//GEN-LAST:event_ALTAActionPerformed
 
     private void TITULACIONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TITULACIONActionPerformed
@@ -518,19 +518,19 @@ private JFrame principal;
 
     private void EXAMINARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXAMINARActionPerformed
         // BOTÓN CON EL QUE SELECCIONAMOS LA IMAGEN QUE DESEAMOS MOSTRAR.
-          String adr="";
-                
-          JFileChooser examinar = new JFileChooser();       //creamos la ventana .
-          FileNameExtensionFilter filtroImagen=new FileNameExtensionFilter("JPG, PNG & GIF","jpg","png","gif");
-          examinar.setFileFilter(filtroImagen); //Filtro para que sólo se muestren archivos con una determinada extensión.
-          int seleccion = examinar.showSaveDialog(examinar);
-          //Comprobar si se ha pulsado EXAMINAR.      
-          if (seleccion == JFileChooser.APPROVE_OPTION){
-                
-                File fichero = examinar.getSelectedFile(); //Crear un objeto File con el archivo elegido
-                adr =fichero.getAbsolutePath();
-                FOTO.setText(adr);                         //Mostrar el nombre del archvivo en un campo de texto
-          } 
+        String adr = "";
+
+        JFileChooser examinar = new JFileChooser();       //creamos la ventana .
+        FileNameExtensionFilter filtroImagen = new FileNameExtensionFilter("JPG, PNG & GIF", "jpg", "png", "gif");
+        examinar.setFileFilter(filtroImagen); //Filtro para que sólo se muestren archivos con una determinada extensión.
+        int seleccion = examinar.showSaveDialog(examinar);
+        //Comprobar si se ha pulsado EXAMINAR.      
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+
+            File fichero = examinar.getSelectedFile(); //Crear un objeto File con el archivo elegido
+            adr = fichero.getAbsolutePath();
+            FOTO.setText(adr);                         //Mostrar el nombre del archvivo en un campo de texto
+        }
     }//GEN-LAST:event_EXAMINARActionPerformed
 
     private void COLLECTIONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_COLLECTIONActionPerformed
@@ -549,7 +549,7 @@ private JFrame principal;
     private void LECTURAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LECTURAActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LECTURAActionPerformed
- private void getImagen() {
+    private void getImagen() {
         try {
             jLabel18.setSize(214, 162);
             ImageIcon imagen = new ImageIcon("UAH.jpg");
@@ -558,7 +558,8 @@ private JFrame principal;
             jLabel18.setIcon(imgRedimensionada);
         } catch (Exception e) {
             System.out.println("Error: " + e.toString());
-        }}
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ALTA;
     private javax.swing.JTextField AUTORES;

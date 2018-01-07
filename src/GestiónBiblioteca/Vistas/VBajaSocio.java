@@ -1,37 +1,36 @@
-
 package GestiónBiblioteca.Vistas;
 
 import GestiónBiblioteca.Biblioteca;
 import GestiónBiblioteca.BibliotecaException;
 import GestiónBiblioteca.Conserje;
 import GestiónBiblioteca.Socio;
-import java.util.HashMap;
-import java.util.ListIterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class VBajaSocio extends javax.swing.JFrame {
-private JFrame principal;
-public static Conserje memento= new Conserje();    
+
+    private final JFrame principal;
+    public static Conserje memento = new Conserje();
+
     public VBajaSocio(JFrame ventana) {
-        initComponents();    
+        initComponents();
         principal = ventana;
         principal.setVisible(false);
         this.setVisible(true);
     }
-  
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        VOLVER = new javax.swing.JButton();
+        volver = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        BAJA = new javax.swing.JButton();
+        baja = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        CODIGOS = new javax.swing.JTextField();
+        codigo = new javax.swing.JTextField();
         botonM = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -42,10 +41,10 @@ public static Conserje memento= new Conserje();
             }
         });
 
-        VOLVER.setText("VOLVER");
-        VOLVER.addActionListener(new java.awt.event.ActionListener() {
+        volver.setText("VOLVER");
+        volver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VOLVERActionPerformed(evt);
+                volverActionPerformed(evt);
             }
         });
 
@@ -53,10 +52,10 @@ public static Conserje memento= new Conserje();
         jLabel1.setForeground(new java.awt.Color(0, 0, 102));
         jLabel1.setText("BAJA SOCIO:");
 
-        BAJA.setText("DAR DE BAJA");
-        BAJA.addActionListener(new java.awt.event.ActionListener() {
+        baja.setText("DAR DE BAJA");
+        baja.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BAJAActionPerformed(evt);
+                bajaActionPerformed(evt);
             }
         });
 
@@ -67,9 +66,9 @@ public static Conserje memento= new Conserje();
         jLabel2.setForeground(new java.awt.Color(0, 51, 102));
         jLabel2.setText("INTRODUZCA CODIGO DE SOCIO:");
 
-        CODIGOS.addActionListener(new java.awt.event.ActionListener() {
+        codigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CODIGOSActionPerformed(evt);
+                codigoActionPerformed(evt);
             }
         });
 
@@ -81,7 +80,7 @@ public static Conserje memento= new Conserje();
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(CODIGOS, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
         jPanel1Layout.setVerticalGroup(
@@ -90,7 +89,7 @@ public static Conserje memento= new Conserje();
                 .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(CODIGOS, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
 
@@ -109,7 +108,7 @@ public static Conserje memento= new Conserje();
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(218, 218, 218)
-                        .addComponent(BAJA))
+                        .addComponent(baja))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(215, 215, 215)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -119,7 +118,7 @@ public static Conserje memento= new Conserje();
                 .addContainerGap(40, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(VOLVER)
+                .addComponent(volver)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botonM)
                 .addGap(53, 53, 53))
@@ -132,10 +131,10 @@ public static Conserje memento= new Conserje();
                 .addGap(25, 25, 25)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(BAJA, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(baja, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(VOLVER)
+                    .addComponent(volver)
                     .addComponent(botonM))
                 .addContainerGap())
         );
@@ -151,49 +150,49 @@ public static Conserje memento= new Conserje();
         principal.setVisible(true);
     }//GEN-LAST:event_formWindowClosed
 
-    private void VOLVERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VOLVERActionPerformed
+    private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
         // TODO add your handling code here:
         this.dispose();
-    }//GEN-LAST:event_VOLVERActionPerformed
+    }//GEN-LAST:event_volverActionPerformed
 
-    private void BAJAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BAJAActionPerformed
+    private void bajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bajaActionPerformed
         try {
-            Socio recuerdo = Biblioteca.DameSocio(CODIGOS.getText());  
+            Socio recuerdo = Biblioteca.getSocio(codigo.getText());
             //System.out.printf(recuerdo.toString());
-            JOptionPane.showMessageDialog(this, "Se guarda el socio nº "+Biblioteca.getNSocio(), "Mensaje de Aviso", JOptionPane.WARNING_MESSAGE);
-            
+            JOptionPane.showMessageDialog(this, "Se guarda el socio nº " + Biblioteca.getNSocio(), "Mensaje de Aviso", JOptionPane.WARNING_MESSAGE);
+
             memento.setRecuerdo(recuerdo);
-            
-            Biblioteca.BajaSocio(CODIGOS.getText());
+
+            Biblioteca.bajaSocio(codigo.getText());
         } catch (BibliotecaException ex) {
             Logger.getLogger(VBajaSocio.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_BAJAActionPerformed
+    }//GEN-LAST:event_bajaActionPerformed
 
-    private void CODIGOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CODIGOSActionPerformed
+    private void codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CODIGOSActionPerformed
+    }//GEN-LAST:event_codigoActionPerformed
 
     private void botonMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMActionPerformed
-    try {
-        // TODO add your handling code here:
-        
-        Socio recuerdoRecuperado = memento.getRecuerdo();
-     
-        Biblioteca.AltaSocio(recuerdoRecuperado);
-    } catch (BibliotecaException ex) {
-        Logger.getLogger(VBajaSocio.class.getName()).log(Level.SEVERE, null, ex);
-    }   
-        
+        try {
+            // TODO add your handling code here:
+
+            Socio recuerdoRecuperado = memento.getRecuerdo();
+
+            Biblioteca.altaSocio(recuerdoRecuperado);
+        } catch (BibliotecaException ex) {
+            Logger.getLogger(VBajaSocio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_botonMActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BAJA;
-    private javax.swing.JTextField CODIGOS;
-    private javax.swing.JButton VOLVER;
+    private javax.swing.JButton baja;
     private javax.swing.JButton botonM;
+    private javax.swing.JTextField codigo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton volver;
     // End of variables declaration//GEN-END:variables
 }

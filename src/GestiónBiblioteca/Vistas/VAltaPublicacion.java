@@ -1,11 +1,10 @@
-
 package GestiónBiblioteca.Vistas;
 
 import javax.swing.JFrame;
 
 public class VAltaPublicacion extends javax.swing.JFrame {
-private JFrame principal;
 
+    private final JFrame principal;
 
     public VAltaPublicacion(JFrame ventana) {
         initComponents();
@@ -14,6 +13,7 @@ private JFrame principal;
         principal.setVisible(false);
         this.setVisible(true);
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -22,7 +22,7 @@ private JFrame principal;
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
-        VOLVER = new javax.swing.JButton();
+        volver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("\"BIBLIOTECA UNIVERSITARIA\"");
@@ -73,11 +73,11 @@ private JFrame principal;
                 .addGap(51, 51, 51))
         );
 
-        VOLVER.setFont(new java.awt.Font("Cambria", 3, 12)); // NOI18N
-        VOLVER.setText("VOLVER");
-        VOLVER.addActionListener(new java.awt.event.ActionListener() {
+        volver.setFont(new java.awt.Font("Cambria", 3, 12)); // NOI18N
+        volver.setText("VOLVER");
+        volver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VOLVERActionPerformed(evt);
+                volverActionPerformed(evt);
             }
         });
 
@@ -89,7 +89,7 @@ private JFrame principal;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(VOLVER))
+                        .addComponent(volver))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -107,7 +107,7 @@ private JFrame principal;
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(VOLVER)
+                .addComponent(volver)
                 .addContainerGap())
         );
 
@@ -122,29 +122,32 @@ private JFrame principal;
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         //SELECCIONA TIPO DE PUBLICACIÓN.
-        int tipo =  jComboBox1.getSelectedIndex();
-         
-         if (tipo == 1) {
+        int tipo = jComboBox1.getSelectedIndex();
+
+        if (tipo == 1) {
             VLibro l = new VLibro(this);
-        } if (tipo ==2){
+        }
+        if (tipo == 2) {
             VRevista r = new VRevista(this);
-        }if (tipo == 3){
-            VProyecto p = new VProyecto(this);          
-        }if (tipo ==4){
-        VTesis t = new VTesis(this);
-    }       
+        }
+        if (tipo == 3) {
+            VProyecto p = new VProyecto(this);
+        }
+        if (tipo == 4) {
+            VTesis t = new VTesis(this);
+        }
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void VOLVERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VOLVERActionPerformed
+    private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
         // TODO add your handling code here:
         this.dispose();
-    }//GEN-LAST:event_VOLVERActionPerformed
+    }//GEN-LAST:event_volverActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton VOLVER;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton volver;
     // End of variables declaration//GEN-END:variables
 }

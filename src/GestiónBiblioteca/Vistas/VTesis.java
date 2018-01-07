@@ -542,7 +542,7 @@ public class VTesis extends javax.swing.JFrame {
              * String materia, String observaciones*/
             Tesis publi = new Tesis(programa,tribunal,entidad,departamento,calificacion,lectura,codigo,isbn,titulo,autores,fecha,foto,paginas,coleccion,materia,observacion);
             
-            Biblioteca.AltaPublicación(publi);
+            Biblioteca.altaPublicacion(publi);
             
             JOptionPane.showMessageDialog(this, "TESIS dada de alta.", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception e) {

@@ -176,7 +176,7 @@ private JFrame principal;
         GregorianCalendar fprestar = new GregorianCalendar();
         fprestar.setTime((Date)FECHAP.getValue());
         
-            Biblioteca.PrestamoPublicación(codigoPubli, codigosocio, fprestar);
+            Biblioteca.prestamoPublicacion(codigoPubli, codigosocio, fprestar);
             JOptionPane.showMessageDialog(this,"El préstamo se efectuó correctamente");
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(this, "Error"+ex.getMessage(), "Mensaje", JOptionPane.ERROR_MESSAGE);

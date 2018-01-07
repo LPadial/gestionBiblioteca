@@ -1,4 +1,3 @@
-
 package GestiónBiblioteca;
 
 import java.io.Serializable;
@@ -11,18 +10,19 @@ import java.util.GregorianCalendar;
     letra P si se trata de un profesor o A si se trata de un alumno.
   - Categoría del socio: Se indicara si se trata de alumno o profesor.
   - Fecha de Inscripción: La fecha en que el socio se ha dado de alta.*/
-public abstract class Socio implements Serializable{
 
-    protected String Nombre;
-    protected String DNI;
+public abstract class Socio implements Serializable {
+
+    protected String nombre;
+    protected String dni;
     protected String codigoSocio;
     protected GregorianCalendar fechaInscripción;
 
     //CONSTRUCTOR:
     public Socio(String Nombre, String DNI) {
-        this.Nombre = Nombre;
-        this.DNI = DNI;
-        this.codigoSocio = Integer.toString(Biblioteca.getNSocio()+10000); //Para generar el código de socio.
+        this.nombre = nombre;
+        this.dni = dni;
+        this.codigoSocio = Integer.toString(Biblioteca.getNSocio() + 10000); //Para generar el código de socio.
         this.fechaInscripción = new GregorianCalendar();
         Biblioteca.masSocios();
     }
@@ -31,7 +31,7 @@ public abstract class Socio implements Serializable{
     public GregorianCalendar getFechaInscripción() {
         return fechaInscripción;
     }
-    
+
     public String getCodigoSocio() {
         return codigoSocio;
     }
@@ -40,33 +40,32 @@ public abstract class Socio implements Serializable{
         this.codigoSocio = codigoSocio;
     }
 
-    public String getDNI() {
-        return DNI;
+    public String getDni() {
+        return dni;
     }
 
-    public void setDNI(String DNI) {
-        this.DNI = DNI;
+    public void setDNI(String dni) {
+        this.dni = dni;
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     @Override
     public String toString() {
-        return "Socio:" + "Nombre=" + Nombre + ", DNI=" + DNI + ", codigoSocio=" + codigoSocio + ", fechaInscripción=" + fechaInscripción ;
+        return "Socio:" + "Nombre=" + nombre + ", DNI=" + dni + ", codigoSocio=" + codigoSocio + ", fechaInscripción=" + fechaInscripción;
     }
-    
-    
-    //FUNCIONES PARA SABER EL MÁXIMO DE DIAS QUE PUEDE TENER UNA PUBLICACIÓN.
-    public abstract int MaxDiasLibros(int dias);
-    public abstract int MaxDiasRevistas(int dias);
-    public abstract int MaxDiasProyectos(int dias);
 
+    //FUNCIONES PARA SABER EL MÁXIMO DE DIAS QUE PUEDE TENER UNA PUBLICACIÓN.
+    public abstract int maxDiasLibros(int dias);
+
+    public abstract int maxDiasRevistas(int dias);
+
+    public abstract int maxDiasProyectos(int dias);
 
 }
-

@@ -1,30 +1,31 @@
 package GestiónBiblioteca;
 
-public class Empleado implements InterfaceEmpleado {
+import java.io.Serializable;
 
-    private String id;
-    private String contraseña;
+public class Empleado implements InterfaceEmpleado, Serializable {
+
+    private String nombre;
+    private String contrasena;
 
 
-    public Empleado(String id, String contraseña) {
-        this.id = id;
-        this.contraseña = contraseña;
+    public Empleado(String nombre, String contrasena) {
+        this.nombre = nombre;
+        this.contrasena = contrasena;
     }
 
    
-    public String getId() {
-        return id;
+    public String getNombre() {
+        return nombre;
     }
 
     public String getContraseña() {
-        return contraseña;
+        return contrasena;
     }
 
    
 
     @Override
-    public boolean informacionEmpleado() {
-        return true;
-       // return this.id ;
+    public String informacionEmpleado() {
+        return this.nombre;
     }
 }

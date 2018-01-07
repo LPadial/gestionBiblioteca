@@ -35,13 +35,13 @@
                   <Group type="102" attributes="0">
                       <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="NPUBLICACION" max="32767" attributes="0"/>
+                      <Component id="npublicacion" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="FECHA" max="32767" attributes="0"/>
+                          <Component id="fecha" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -76,24 +76,24 @@
                               </Group>
                           </Group>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="MATERIA" max="32767" attributes="0"/>
-                              <Component id="LOCALIZACION" alignment="0" max="32767" attributes="0"/>
-                              <Component id="EDICION" alignment="0" max="32767" attributes="0"/>
-                              <Component id="CONTENIDO" alignment="0" max="32767" attributes="0"/>
-                              <Component id="ISBN" alignment="0" max="32767" attributes="0"/>
-                              <Component id="AUTORES" alignment="0" max="32767" attributes="0"/>
-                              <Component id="PAGINAS" alignment="0" max="32767" attributes="0"/>
-                              <Component id="LOCALIDAD" alignment="0" max="32767" attributes="0"/>
-                              <Component id="EDITORIAL" alignment="0" max="32767" attributes="0"/>
+                              <Component id="materia" max="32767" attributes="0"/>
+                              <Component id="localizacion" alignment="0" max="32767" attributes="0"/>
+                              <Component id="edicion" alignment="0" max="32767" attributes="0"/>
+                              <Component id="observaciones" alignment="0" max="32767" attributes="0"/>
+                              <Component id="isbn" alignment="0" max="32767" attributes="0"/>
+                              <Component id="autores" alignment="0" max="32767" attributes="0"/>
+                              <Component id="paginas" alignment="0" max="32767" attributes="0"/>
+                              <Component id="localidad" alignment="0" max="32767" attributes="0"/>
+                              <Component id="editorial" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="ANTES" min="-2" max="-2" attributes="0"/>
+                                      <Component id="antes" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="CODIGO" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
-                                          <Component id="TITULO" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
+                                          <Component id="codigo" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
+                                          <Component id="titulo" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                                              <Component id="COLECCION" min="-2" max="-2" attributes="0"/>
+                                              <Component id="coleccion" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -119,15 +119,15 @@
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Group type="102" attributes="0">
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="LOCALIZACIÓN" max="32767" attributes="0"/>
+                                              <Component id="localizacion1" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                              <Component id="PERIODICIDAD" min="-2" pref="151" max="-2" attributes="0"/>
+                                              <Component id="periocidad" min="-2" pref="151" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="ADISPONIBLE" min="-2" pref="144" max="-2" attributes="0"/>
+                                              <Component id="adisponible" min="-2" pref="144" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -137,8 +137,8 @@
                                           <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="NUMERO" pref="148" max="32767" attributes="0"/>
-                                              <Component id="VOLUMEN" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="numero" pref="148" max="32767" attributes="0"/>
+                                              <Component id="volumen" alignment="1" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
@@ -159,7 +159,7 @@
                       <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                       <Component id="modificar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="SIG" min="-2" max="-2" attributes="0"/>
+                      <Component id="sig" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -172,42 +172,42 @@
                       </Group>
                       <EmptySpace min="31" pref="31" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="TITULACION" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
-                          <Component id="PROGRAMA" alignment="1" min="-2" pref="148" max="-2" attributes="0"/>
+                          <Component id="titulacion" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
+                          <Component id="programa" alignment="1" min="-2" pref="148" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                      <Component id="CALIFICACION" min="-2" pref="148" max="-2" attributes="0"/>
+                      <Component id="calificacion" min="-2" pref="148" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="LECTURA" min="-2" pref="148" max="-2" attributes="0"/>
+                          <Component id="lectura" min="-2" pref="148" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
                       <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="DEPARTAMENTO" min="-2" pref="148" max="-2" attributes="0"/>
+                      <Component id="departamento" min="-2" pref="148" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="TRIBUNAL" min="-2" pref="148" max="-2" attributes="0"/>
+                          <Component id="tribunal" min="-2" pref="148" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                          <Component id="ENTIDAD" min="-2" pref="148" max="-2" attributes="0"/>
+                          <Component id="entidad" min="-2" pref="148" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                      <Component id="RUTA" min="-2" pref="176" max="-2" attributes="0"/>
+                      <Component id="ruta" min="-2" pref="176" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                      <Component id="EXAMINAR" min="-2" pref="124" max="-2" attributes="0"/>
+                      <Component id="examinar" min="-2" pref="124" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
@@ -234,8 +234,8 @@
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="modificar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="SIG" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="ANTES" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="sig" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="antes" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -251,53 +251,53 @@
                                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="PERIODICIDAD" min="-2" max="-2" attributes="0"/>
+                                      <Component id="periocidad" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="PROGRAMA" min="-2" pref="31" max="-2" attributes="0"/>
+                              <Component id="programa" min="-2" pref="31" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="TITULACION" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="titulacion" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                                   <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="LECTURA" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lectura" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="CALIFICACION" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="calificacion" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="DEPARTAMENTO" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="departamento" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ENTIDAD" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="entidad" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="TRIBUNAL" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tribunal" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="EXAMINAR" min="-2" max="-2" attributes="0"/>
+                              <Component id="examinar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="VOLUMEN" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                              <Component id="RUTA" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="volumen" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                              <Component id="ruta" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
@@ -305,17 +305,17 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="NUMERO" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="numero" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ADISPONIBLE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="adisponible" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="LOCALIZACIÓN" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="localizacion1" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -329,44 +329,44 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="CODIGO" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="codigo" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="ISBN" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="isbn" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="TITULO" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="titulo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel5" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                          <Component id="AUTORES" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="autores" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="FECHA" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="fecha" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="PAGINAS" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="paginas" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                          <Component id="COLECCION" min="-2" max="-2" attributes="0"/>
+                          <Component id="coleccion" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="EDITORIAL" min="-2" pref="23" max="-2" attributes="0"/>
+                              <Component id="editorial" min="-2" pref="23" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
@@ -375,33 +375,33 @@
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="LOCALIDAD" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="localidad" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel10" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="CONTENIDO" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="observaciones" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="EDICION" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="edicion" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="LOCALIZACION" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="localizacion" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="29" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="MATERIA" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="materia" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                           <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="NPUBLICACION" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="npublicacion" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                   </Group>
@@ -423,14 +423,14 @@
         <Property name="text" type="java.lang.String" value="CONSULTA:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="CONTENIDO">
+    <Component class="javax.swing.JTextField" name="observaciones">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CONTENIDOActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="observacionesActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="EDICION">
+    <Component class="javax.swing.JTextField" name="edicion">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EDICIONActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="edicionActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
@@ -466,34 +466,34 @@
         <Property name="text" type="java.lang.String" value="C&#xd3;DIGO:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="AUTORES">
+    <Component class="javax.swing.JTextField" name="autores">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AUTORESActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="autoresActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="ISBN">
+    <Component class="javax.swing.JTextField" name="isbn">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ISBNActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="isbnActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="TITULO">
+    <Component class="javax.swing.JTextField" name="titulo">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TITULOActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tituloActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="EDITORIAL">
+    <Component class="javax.swing.JTextField" name="editorial">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EDITORIALActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editorialActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="LOCALIDAD">
+    <Component class="javax.swing.JTextField" name="localidad">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LOCALIDADActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="localidadActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="PAGINAS">
+    <Component class="javax.swing.JTextField" name="paginas">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PAGINASActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="paginasActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel12">
@@ -518,9 +518,9 @@
         <Property name="text" type="java.lang.String" value="LOCALIZACI&#xd3;N:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="CODIGO">
+    <Component class="javax.swing.JTextField" name="codigo">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CODIGOActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="codigoActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
@@ -600,9 +600,9 @@
         <Property name="text" type="java.lang.String" value="P&#xc1;GINAS:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="LOCALIZACION">
+    <Component class="javax.swing.JTextField" name="localizacion">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LOCALIZACIONActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="localizacionActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel14">
@@ -660,29 +660,29 @@
         <Property name="text" type="java.lang.String" value="ENTIDAD:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="CALIFICACION">
+    <Component class="javax.swing.JTextField" name="calificacion">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CALIFICACIONActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calificacionActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="DEPARTAMENTO">
+    <Component class="javax.swing.JTextField" name="departamento">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DEPARTAMENTOActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="departamentoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="TRIBUNAL">
+    <Component class="javax.swing.JTextField" name="tribunal">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TRIBUNALActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tribunalActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="ENTIDAD">
+    <Component class="javax.swing.JTextField" name="entidad">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ENTIDADActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="entidadActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="TITULACION">
+    <Component class="javax.swing.JTextField" name="titulacion">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TITULACIONActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="titulacionActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel19">
@@ -707,24 +707,24 @@
         <Property name="text" type="java.lang.String" value="PROGRAMA:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="PROGRAMA">
+    <Component class="javax.swing.JTextField" name="programa">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PROGRAMAActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="programaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="NUMERO">
+    <Component class="javax.swing.JTextField" name="numero">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NUMEROActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numeroActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="VOLUMEN">
+    <Component class="javax.swing.JTextField" name="volumen">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VOLUMENActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="volumenActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="LOCALIZACI&#xd3;N">
+    <Component class="javax.swing.JTextField" name="localizacion1">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LOCALIZACI&#xd3;NActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="localizacion1ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel21">
@@ -800,7 +800,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextArea" name="comentario">
+        <Component class="javax.swing.JTextArea" name="contenido">
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
@@ -819,20 +819,20 @@
         <Property name="text" type="java.lang.String" value="CONTENIDO:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="ANTES">
+    <Component class="javax.swing.JButton" name="antes">
       <Properties>
         <Property name="text" type="java.lang.String" value="&lt;&lt;"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ANTESActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="antesActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="SIG">
+    <Component class="javax.swing.JButton" name="sig">
       <Properties>
         <Property name="text" type="java.lang.String" value="&gt;&gt;"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SIGActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sigActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="modificar">
@@ -854,41 +854,41 @@
         <Property name="text" type="java.lang.String" value="MATERIA:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="MATERIA">
+    <Component class="javax.swing.JTextField" name="materia">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MATERIAActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="materiaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="FECHA">
+    <Component class="javax.swing.JFormattedTextField" name="fecha">
       <Properties>
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
           <Format subtype="1" type="1"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="LECTURA">
+    <Component class="javax.swing.JFormattedTextField" name="lectura">
       <Properties>
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
           <Format subtype="1" type="1"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="COLECCION">
+    <Component class="javax.swing.JCheckBox" name="coleccion">
     </Component>
-    <Component class="javax.swing.JButton" name="EXAMINAR">
+    <Component class="javax.swing.JButton" name="examinar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Examinar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EXAMINARActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="examinarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="RUTA">
+    <Component class="javax.swing.JTextField" name="ruta">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RUTAActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rutaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JComboBox" name="PERIODICIDAD">
+    <Component class="javax.swing.JComboBox" name="periocidad">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -900,17 +900,17 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PERIODICIDADActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="periocidadActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="fotos">
     </Component>
-    <Component class="javax.swing.JTextField" name="ADISPONIBLE">
+    <Component class="javax.swing.JTextField" name="adisponible">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ADISPONIBLEActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="adisponibleActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="NPUBLICACION">
+    <Component class="javax.swing.JTextField" name="npublicacion">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel26">
       <Properties>

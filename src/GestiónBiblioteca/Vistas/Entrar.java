@@ -2,7 +2,6 @@ package GestiónBiblioteca.Vistas;
 
 import GestiónBiblioteca.Empleado;
 import GestiónBiblioteca.ProxyProteccion;
-import GestiónBiblioteca.Vistas.VentanaBiblioteca;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import javax.swing.ImageIcon;
@@ -122,21 +121,19 @@ public class Entrar extends javax.swing.JFrame {
     }//GEN-LAST:event_USUARIOActionPerformed
 
     private void ACEPTARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ACEPTARActionPerformed
-       //USUARIO
-         BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+        //USUARIO
+        BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
         ProxyProteccion proxy;
-        
-        
-        
+
         String usua = USUARIO.getText();
         String seña = new String(CONTRASEÑA.getPassword());
         Empleado emp = new Empleado(usua, seña);
-          proxy = new ProxyProteccion(emp);
-        if (!proxy.informacionEmpleado()){ 
+        proxy = new ProxyProteccion(emp);
+        if (!proxy.logueo()) {
             JOptionPane.showMessageDialog(this, "USUARIO NO AUTORIZADO.", "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
-        }else{
-         VentanaBiblioteca b = new VentanaBiblioteca(this);
-         this.dispose();
+        } else {
+            VentanaBiblioteca b = new VentanaBiblioteca(this);
+            this.dispose();
         }
 
 

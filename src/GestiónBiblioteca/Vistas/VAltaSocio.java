@@ -1,36 +1,38 @@
-
 package GestiónBiblioteca.Vistas;
 
 import GestiónBiblioteca.Alumno;
 import GestiónBiblioteca.Biblioteca;
+import GestiónBiblioteca.BibliotecaException;
 import GestiónBiblioteca.Profesor;
+import java.awt.HeadlessException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-
 public class VAltaSocio extends javax.swing.JFrame {
-private JFrame principal;
+
+    private final JFrame principal;
+
     public VAltaSocio(JFrame ventana) {
         initComponents();
         principal = ventana;
         principal.setVisible(false);
         this.setVisible(true);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        VOLVER = new javax.swing.JButton();
+        volver = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        ALTAS = new javax.swing.JButton();
+        alta = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        NOMBRE = new javax.swing.JTextField();
+        nombre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         categoria = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
-        DNI = new javax.swing.JTextField();
+        dni = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("\"BIBLIOTECA UNIVERSITARIA\"");
@@ -41,10 +43,10 @@ private JFrame principal;
             }
         });
 
-        VOLVER.setText("VOLVER");
-        VOLVER.addActionListener(new java.awt.event.ActionListener() {
+        volver.setText("VOLVER");
+        volver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VOLVERActionPerformed(evt);
+                volverActionPerformed(evt);
             }
         });
 
@@ -52,10 +54,10 @@ private JFrame principal;
         jLabel1.setForeground(new java.awt.Color(0, 0, 102));
         jLabel1.setText("ALTA NUEVO SOCIO:");
 
-        ALTAS.setText("DAR DE ALTA");
-        ALTAS.addActionListener(new java.awt.event.ActionListener() {
+        alta.setText("DAR DE ALTA");
+        alta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ALTASActionPerformed(evt);
+                altaActionPerformed(evt);
             }
         });
 
@@ -66,9 +68,9 @@ private JFrame principal;
         jLabel3.setForeground(new java.awt.Color(0, 51, 102));
         jLabel3.setText("DNI :");
 
-        NOMBRE.addActionListener(new java.awt.event.ActionListener() {
+        nombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NOMBREActionPerformed(evt);
+                nombreActionPerformed(evt);
             }
         });
 
@@ -88,9 +90,9 @@ private JFrame principal;
         jLabel2.setForeground(new java.awt.Color(0, 51, 102));
         jLabel2.setText("NOMBRE :");
 
-        DNI.addActionListener(new java.awt.event.ActionListener() {
+        dni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DNIActionPerformed(evt);
+                dniActionPerformed(evt);
             }
         });
 
@@ -106,8 +108,8 @@ private JFrame principal;
                     .addComponent(jLabel2))
                 .addGap(68, 68, 68)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(DNI)
-                    .addComponent(NOMBRE)
+                    .addComponent(dni)
+                    .addComponent(nombre)
                     .addComponent(categoria, 0, 241, Short.MAX_VALUE))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
@@ -120,17 +122,17 @@ private JFrame principal;
                     .addComponent(categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NOMBRE, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DNI, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dni, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
-        NOMBRE.getAccessibleContext().setAccessibleName("name");
-        NOMBRE.getAccessibleContext().setAccessibleDescription("");
+        nombre.getAccessibleContext().setAccessibleName("name");
+        nombre.getAccessibleContext().setAccessibleDescription("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -140,13 +142,13 @@ private JFrame principal;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(VOLVER))
+                        .addComponent(volver))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(194, 194, 194)
-                        .addComponent(ALTAS, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(alta, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(173, 173, 173)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -160,9 +162,9 @@ private JFrame principal;
                 .addGap(28, 28, 28)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(ALTAS, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(alta, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addComponent(VOLVER)
+                .addComponent(volver)
                 .addContainerGap())
         );
 
@@ -175,72 +177,72 @@ private JFrame principal;
         principal.setVisible(true);
     }//GEN-LAST:event_formWindowClosed
 
-    private void VOLVERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VOLVERActionPerformed
+    private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
         // TODO add your handling code here:
         this.dispose();
-    }//GEN-LAST:event_VOLVERActionPerformed
+    }//GEN-LAST:event_volverActionPerformed
 
-    private void DNIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DNIActionPerformed
+    private void dniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dniActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DNIActionPerformed
+    }//GEN-LAST:event_dniActionPerformed
 
-    private void NOMBREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NOMBREActionPerformed
+    private void nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NOMBREActionPerformed
+    }//GEN-LAST:event_nombreActionPerformed
 
-    private void ALTASActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ALTASActionPerformed
+    private void altaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altaActionPerformed
         // BOTÓN QUE DA DE ALTA:
-         int tipo =  categoria.getSelectedIndex();
-         
-         //PROFESOR.
-         if (tipo == 1) {       
-             try{
-                 
-            String nombre = DNI.getText();
-            String dni = NOMBRE.getText();
-            
-            Profesor objsocio = new Profesor(nombre,dni);
-            Biblioteca.AltaSocio(objsocio);
-            JOptionPane.showMessageDialog(this, "PROFESOR dado de alta.APUNTE SU NUEVO CÓDIGO DE SOCIO:"+objsocio.getCodigoSocio(), "Mensaje", JOptionPane.INFORMATION_MESSAGE);
-        } catch (NumberFormatException nfe) {
-            JOptionPane.showMessageDialog(this, "Valor Incorrecto"+nfe.getMessage(), "Mensaje", JOptionPane.ERROR_MESSAGE);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error en alta"+e.getMessage(), "Mensaje", JOptionPane.ERROR_MESSAGE);
-       }            
-        } 
-        //ALUMNO.
-        if (tipo ==2){        
-            try{
-            String nombre = DNI.getText();
-            String dni = NOMBRE.getText();
-            
-            Alumno objsocio = new Alumno(nombre,dni);
-            Biblioteca.AltaSocio(objsocio);
-            JOptionPane.showMessageDialog(this, "ALUMNO dado de alta.APUNTE SU NUEVO CÓDIGO DE SOCIO:"+objsocio.getCodigoSocio(), "Mensaje", JOptionPane.INFORMATION_MESSAGE);
-        } catch (NumberFormatException nfe) {
-            JOptionPane.showMessageDialog(this, "Valor Incorrecto"+nfe.getMessage(), "Mensaje", JOptionPane.ERROR_MESSAGE);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error en alta"+e.getMessage(), "Mensaje", JOptionPane.ERROR_MESSAGE);
-        }            
-        }
-        
+        int tipo = categoria.getSelectedIndex();
 
-    }//GEN-LAST:event_ALTASActionPerformed
+        //PROFESOR.
+        if (tipo == 1) {
+            try {
+
+                String auxNombre = nombre.getText();
+                String auxDni = dni.getText();
+
+                Profesor objsocio = new Profesor(auxNombre, auxDni);
+                Biblioteca.altaSocio(objsocio);
+                JOptionPane.showMessageDialog(this, "PROFESOR dado de alta.APUNTE SU NUEVO CÓDIGO DE SOCIO:" + objsocio.getCodigoSocio(), "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+            } catch (NumberFormatException nfe) {
+                JOptionPane.showMessageDialog(this, "Valor Incorrecto" + nfe.getMessage(), "Mensaje", JOptionPane.ERROR_MESSAGE);
+            } catch (BibliotecaException | HeadlessException e) {
+                JOptionPane.showMessageDialog(this, "Error en alta" + e.getMessage(), "Mensaje", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        //ALUMNO.
+        if (tipo == 2) {
+            try {
+                String auxNombre = nombre.getText();
+                String auxDni = dni.getText();
+
+                Alumno objsocio = new Alumno(auxNombre, auxDni);
+                Biblioteca.altaSocio(objsocio);
+                JOptionPane.showMessageDialog(this, "ALUMNO dado de alta.APUNTE SU NUEVO CÓDIGO DE SOCIO:" + objsocio.getCodigoSocio(), "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+            } catch (NumberFormatException nfe) {
+                JOptionPane.showMessageDialog(this, "Valor Incorrecto" + nfe.getMessage(), "Mensaje", JOptionPane.ERROR_MESSAGE);
+            } catch (BibliotecaException | HeadlessException e) {
+                JOptionPane.showMessageDialog(this, "Error en alta" + e.getMessage(), "Mensaje", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+
+
+    }//GEN-LAST:event_altaActionPerformed
 
     private void categoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_categoriaActionPerformed
         // Selecciona si es PROFESOR Y ALUMNO.       
     }//GEN-LAST:event_categoriaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ALTAS;
-    private javax.swing.JTextField DNI;
-    private javax.swing.JTextField NOMBRE;
-    private javax.swing.JButton VOLVER;
+    private javax.swing.JButton alta;
     private javax.swing.JComboBox categoria;
+    private javax.swing.JTextField dni;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField nombre;
+    private javax.swing.JButton volver;
     // End of variables declaration//GEN-END:variables
 }

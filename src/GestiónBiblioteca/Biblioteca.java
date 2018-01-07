@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Biblioteca {
 
-    private static ArrayList<Publicación> publicaciones = new ArrayList<Publicación>();
+    private static ArrayList<Publicacion> publicaciones = new ArrayList<Publicacion>();
     private static HashMap<String, Socio> socios = new HashMap<>();
     private static HashMap<String, Empleado> empleados = new HashMap<>();
     private static HashMap<String, Autor> autores = new HashMap<>();
@@ -38,14 +38,14 @@ public class Biblioteca {
         return publicaciones.isEmpty();
     }
 
-    public static ArrayList<Publicación> getPublicación() {
+    public static ArrayList<Publicacion> getPublicacion() {
 
         Comparator CodigoPublicación = new Comparator() {
             //COMPARADOR PARA ORDNAR LAS Publicación POR SU CODIGO.
             public int compare(Object n1, Object n2) {
 
-                Publicación p1 = (Publicación) n1;
-                Publicación p2 = (Publicación) n2;
+                Publicacion p1 = (Publicacion) n1;
+                Publicacion p2 = (Publicacion) n2;
                 return p1.getCodigoPubli().compareTo(p2.getCodigoPubli());
             }
         };
@@ -56,7 +56,7 @@ public class Biblioteca {
     }
 
     //FUNCIÓN PARA DAR DE ALTA UN PUBLICACIÓN.
-    public static boolean AltaPublicación(Publicación publi) {
+    public static boolean altaPublicacion(Publicacion publi) {
         if (!publicaciones.contains(publi)) {
             publicaciones.add(publi);
             return true;
@@ -66,7 +66,7 @@ public class Biblioteca {
     }
 
     // FUNCIÓN PARA DAR DE BAJA FUNCIONES.
-    public static boolean BajaPublicación(Publicación publi) {
+    public static boolean bajaPublicacion(Publicacion publi) {
         if (publicaciones.contains(publi)) {
             publicaciones.remove(publi);
             return true;
@@ -76,13 +76,13 @@ public class Biblioteca {
     }
 
     //FUNCIÓN PARA BUSCAR LAS PUBLICACIONES.
-    private static Publicación BuscarPublicación(String Codigo) {
+    private static Publicacion buscarPublicacion(String Codigo) {
 
-        Publicación publicación;
+        Publicacion publicación;
         ListIterator g = publicaciones.listIterator();
 
         while (g.hasNext()) {
-            publicación = (Publicación) g.next();
+            publicación = (Publicacion) g.next();
             if (Codigo.equals(publicación.getCodigoPubli())) {
                 return publicación;
             }
@@ -91,7 +91,7 @@ public class Biblioteca {
     }
 
     //Función que modifica Las PUBLICACIONES.                                                                    
-    public static boolean modificaPublicación(Publicación publi, String p_codigoPubli, String p_isbn, String p_titulo, String p_autores, GregorianCalendar p_fechaPublicación, int p_paginas, boolean p_coleccion, String p_materia, String p_fotografia, String p_observaciones) {
+    public static boolean modificaPublicacion(Publicacion publi, String p_codigoPubli, String p_isbn, String p_titulo, String p_autores, GregorianCalendar p_fechaPublicación, int p_paginas, boolean p_coleccion, String p_materia, String p_fotografia, String p_observaciones) {
         if (publi == null || !publicaciones.contains(publi)) {
             return false;
         }
@@ -190,24 +190,24 @@ public class Biblioteca {
     }
     //Función PARA EL PRESTAMO DE PUBLICACIONES.
 
-    public static void PrestamoPublicación(String codigoPubli, String codigosocio, GregorianCalendar fprestar) throws IOException {
-        Publicación m = BuscarPublicación(codigoPubli);
-        Prestar prest = m.PrestarPublicación(socios.get(codigosocio), fprestar);
+    public static void prestamoPublicacion(String codigoPubli, String codigosocio, GregorianCalendar fprestar) throws IOException {
+        Publicacion m = buscarPublicacion(codigoPubli);
+        Prestar prest = m.prestarPublicacion(socios.get(codigosocio), fprestar);
         prestar.put(m.getCodigoPubli(), prest);
 
     }
 
     //FUNCION PARA LA DEVOLUCIÓN DE PUBLICACIONES.
-    public static int DevolverPublicación(String codigoPubli, GregorianCalendar fdevolver) throws IOException {
-        Publicación m = BuscarPublicación(codigoPubli);
+    public static int devolverPublicacion(String codigoPubli, GregorianCalendar fdevolver) throws IOException {
+        Publicacion m = buscarPublicacion(codigoPubli);
         Prestar prest = prestar.get(codigoPubli);
         prest.setFechaDevolucion(fdevolver);
-        return m.DevolverPublicación(prest);
+        return m.devolverPublicacion(prest);
 
     }
     //FUNCIÓN PARA DAR DE ALTA A LOS SOCIOS.
 
-    public static boolean AltaSocio(Socio person) throws BibliotecaException {
+    public static boolean altaSocio(Socio person) throws BibliotecaException {
         if (!socios.containsKey(person.getCodigoSocio())) {
             socios.put(person.getCodigoSocio(), person);
             return true;
@@ -217,7 +217,7 @@ public class Biblioteca {
     }
 
     //FUNCIÓN PARA DAR DE ALTA A LOS SOCIOS.
-    public static boolean AltaAutor(Autor autorO) throws BibliotecaException {
+    public static boolean altaAutor(Autor autorO) throws BibliotecaException {
         if (!autores.containsKey(autorO.getCodigo())) {
             autores.put(autorO.getCodigo(), autorO);
             return true;
@@ -227,7 +227,7 @@ public class Biblioteca {
     }
 
     //FUNCION PARA DAR DE BAJA A LOS SOCIOS.
-    public static boolean BajaSocio(String person) throws BibliotecaException {
+    public static boolean bajaSocio(String person) throws BibliotecaException {
         if (socios.containsKey(person)) {
             socios.remove(person);
             return true;
@@ -236,7 +236,7 @@ public class Biblioteca {
         }
     }
 
-    public static Socio DameSocio(String person) throws BibliotecaException {
+    public static Socio getSocio(String person) throws BibliotecaException {
         if (socios.containsKey(person)) {
 
             return socios.get(person);
@@ -247,8 +247,9 @@ public class Biblioteca {
 
     //FUNCIÓN PARA DAR DE ALTA A LOS EMPLEADOS.
     public static boolean altaEmpleado(Empleado usuario) throws BibliotecaException {
-        if (!empleados.containsKey(usuario.getId())) {
-            empleados.put(usuario.getId(), usuario);
+        if (!empleados.containsKey(usuario.getNombre())) {
+            empleados.put(usuario.getNombre(), usuario);
+            guardar();
             return true;
         } else {
             throw new BibliotecaException(BibliotecaException.EMPLEADO_EXISTE);
@@ -308,7 +309,7 @@ public class Biblioteca {
         try {
             FileInputStream recu = new FileInputStream("publicaciones.dat");
             ObjectInputStream recu1 = new ObjectInputStream(recu);
-            publicaciones = (ArrayList<Publicación>) recu1.readObject();
+            publicaciones = (ArrayList<Publicacion>) recu1.readObject();
             recu.close();
             FileInputStream rar = new FileInputStream("socios.dat");
             ObjectInputStream rar1 = new ObjectInputStream(rar);

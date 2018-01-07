@@ -3,20 +3,20 @@ package GestiónBiblioteca;
 
 public class Alumno extends Socio {
 
-    public Alumno(String Nombre, String DNI) {
-        super(Nombre, DNI);
+    public Alumno(String nombre, String dni) {
+        super(nombre, dni);
         codigoSocio += "A";         //CIFRA DEL CODIGO QUE INDICA SI SE ES PROFESOR O ALUMNO.
     }
     @Override
-        public int MaxDiasLibros(int dias){
+        public int maxDiasLibros(int dias){
             return 6;
         }
     @Override
-        public int MaxDiasRevistas(int dias){
+        public int maxDiasRevistas(int dias){
             return 3;
         }
     @Override
-        public int MaxDiasProyectos(int dias){
+        public int maxDiasProyectos(int dias){
             return 10;
         }
 }

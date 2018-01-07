@@ -473,7 +473,7 @@ public class VLibro extends javax.swing.JFrame {
             
             Libro publi = new Libro(editorial,localidad,contenido,edicion,localizacion,codigo,isbn,titulo,autores,fecha,foto,paginas,coleccion,materia,observacion);
             
-            Biblioteca.AltaPublicación(publi);
+            Biblioteca.altaPublicacion(publi);
             
             JOptionPane.showMessageDialog(this, "LIBRO dado de alta.", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception e) {

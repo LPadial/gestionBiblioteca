@@ -36,7 +36,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="VOLVER" min="-2" max="-2" attributes="0"/>
+                      <Component id="volver" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
@@ -44,7 +44,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
-                      <Component id="ALTAS" min="-2" pref="140" max="-2" attributes="0"/>
+                      <Component id="alta" min="-2" pref="140" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -64,21 +64,21 @@
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="ALTAS" min="-2" pref="32" max="-2" attributes="0"/>
+              <Component id="alta" min="-2" pref="32" max="-2" attributes="0"/>
               <EmptySpace pref="22" max="32767" attributes="0"/>
-              <Component id="VOLVER" min="-2" max="-2" attributes="0"/>
+              <Component id="volver" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="VOLVER">
+    <Component class="javax.swing.JButton" name="volver">
       <Properties>
         <Property name="text" type="java.lang.String" value="VOLVER"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VOLVERActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="volverActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
@@ -92,12 +92,12 @@
         <Property name="text" type="java.lang.String" value="ALTA NUEVO AUTOR"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="ALTAS">
+    <Component class="javax.swing.JButton" name="alta">
       <Properties>
         <Property name="text" type="java.lang.String" value="DAR DE ALTA"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ALTASActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="altaActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel1">
@@ -121,7 +121,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="FECHA" min="-2" pref="239" max="-2" attributes="0"/>
+                          <Component id="fecha" min="-2" pref="239" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -130,8 +130,8 @@
                           </Group>
                           <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="NOMBRE" pref="241" max="32767" attributes="0"/>
-                              <Component id="CODIG" max="32767" attributes="0"/>
+                              <Component id="nombre" pref="241" max="32767" attributes="0"/>
+                              <Component id="codigo" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
                       </Group>
@@ -146,16 +146,16 @@
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel2" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                      <Component id="NOMBRE" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="nombre" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="CODIG" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="codigo" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="FECHA" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="fecha" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="79" max="32767" attributes="0"/>
@@ -186,9 +186,9 @@
             <Property name="text" type="java.lang.String" value="NOMBRE :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="NOMBRE">
+        <Component class="javax.swing.JTextField" name="nombre">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NOMBREActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
@@ -202,7 +202,7 @@
             <Property name="text" type="java.lang.String" value="Fecha Nacimiento :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="FECHA">
+        <Component class="javax.swing.JTextField" name="fecha">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
@@ -210,7 +210,7 @@
             <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="fecha"/>
           </AccessibilityProperties>
         </Component>
-        <Component class="javax.swing.JTextField" name="CODIG">
+        <Component class="javax.swing.JTextField" name="codigo">
         </Component>
       </SubComponents>
     </Container>

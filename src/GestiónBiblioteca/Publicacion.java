@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.GregorianCalendar;
 
-public abstract class Publicación implements Serializable{
+public abstract class Publicacion implements Serializable{
     
     private String codigoPubli;
     private String ISBN;
@@ -32,7 +32,7 @@ public abstract class Publicación implements Serializable{
     private boolean estado;
 
    //CONSTRUCTOR.
-    public Publicación(String codigoPubli, String ISBN, String titulo, String autor, GregorianCalendar fechaPublicación, String fotografia, int paginas, boolean coleccion, String materia, String observaciones) {
+    public Publicacion(String codigoPubli, String ISBN, String titulo, String autor, GregorianCalendar fechaPublicación, String fotografia, int paginas, boolean coleccion, String materia, String observaciones) {
         this.codigoPubli = codigoPubli;
         this.ISBN = ISBN;
         this.titulo = titulo;
@@ -147,12 +147,12 @@ public abstract class Publicación implements Serializable{
     }
     
     
-      public Prestar PrestarPublicación(Socio socio,GregorianCalendar fechaPrestamo)throws IOException{   
+      public Prestar prestarPublicacion(Socio socio,GregorianCalendar fechaPrestamo)throws IOException{   
           Prestar prest = new Prestar(this,socio,fechaPrestamo);
           prest.Factura(true);
           return prest;
         }
-      public int DevolverPublicación(Prestar vuelta) throws IOException{
+      public int devolverPublicacion(Prestar vuelta) throws IOException{
           vuelta.Factura(false);
           return vuelta.calcularTardanza();
         }
