@@ -2,6 +2,7 @@
 package GestiónBiblioteca.Vistas;
 
 import GestiónBiblioteca.Biblioteca;
+import java.awt.HeadlessException;
 import java.io.IOException;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -41,7 +42,7 @@ private JFrame principal;
 
         jLabel1.setFont(new java.awt.Font("Cambria", 3, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel1.setText("Gestíon De Préstamo:");
+        jLabel1.setText("Préstamo de publicación:");
 
         PRESTAR.setText("PRESTAR");
         PRESTAR.addActionListener(new java.awt.event.ActionListener() {
@@ -68,7 +69,8 @@ private JFrame principal;
 
         jLabel2.setFont(new java.awt.Font("Cambria", 3, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 51, 102));
-        jLabel2.setText("Introduzca Código de Publicación:");
+        jLabel2.setText("Código de Publicación:");
+        jLabel2.setToolTipText("");
 
         jLabel3.setFont(new java.awt.Font("Cambria", 3, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 51, 102));
@@ -143,7 +145,7 @@ private JFrame principal;
                     .addGroup(layout.createSequentialGroup()
                         .addGap(175, 175, 175)
                         .addComponent(jLabel1)))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,7 +182,7 @@ private JFrame principal;
             JOptionPane.showMessageDialog(this,"El préstamo se efectuó correctamente");
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(this, "Error"+ex.getMessage(), "Mensaje", JOptionPane.ERROR_MESSAGE);
-        }catch(Exception e){
+        }catch(HeadlessException e){
             JOptionPane.showMessageDialog(this, "Error"+e.getMessage(), "Mensaje", JOptionPane.ERROR_MESSAGE);
         }
         

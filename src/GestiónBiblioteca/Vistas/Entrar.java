@@ -19,12 +19,12 @@ public class Entrar extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        ACEPTAR = new javax.swing.JButton();
-        USUARIO = new javax.swing.JTextField();
+        aceptar = new javax.swing.JButton();
+        usuario = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        CONTRASEÑA = new javax.swing.JPasswordField();
+        contrasena = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("\"BIBLIOTECA UNIVERSITARIA\"");
@@ -33,16 +33,16 @@ public class Entrar extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 102));
         jLabel1.setText("GESTIÓN BIBLIOTECA");
 
-        ACEPTAR.setText("ACEPTAR");
-        ACEPTAR.addActionListener(new java.awt.event.ActionListener() {
+        aceptar.setText("ACEPTAR");
+        aceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ACEPTARActionPerformed(evt);
+                aceptarActionPerformed(evt);
             }
         });
 
-        USUARIO.addActionListener(new java.awt.event.ActionListener() {
+        usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                USUARIOActionPerformed(evt);
+                usuarioActionPerformed(evt);
             }
         });
 
@@ -56,9 +56,9 @@ public class Entrar extends javax.swing.JFrame {
 
         getImagen();
 
-        CONTRASEÑA.addActionListener(new java.awt.event.ActionListener() {
+        contrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CONTRASEÑAActionPerformed(evt);
+                contrasenaActionPerformed(evt);
             }
         });
 
@@ -81,9 +81,9 @@ public class Entrar extends javax.swing.JFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ACEPTAR, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(USUARIO, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                            .addComponent(CONTRASEÑA))
+                            .addComponent(aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(usuario, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                            .addComponent(contrasena))
                         .addGap(67, 67, 67))))
         );
         layout.setVerticalGroup(
@@ -95,16 +95,16 @@ public class Entrar extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(USUARIO, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(CONTRASEÑA, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(3, 3, 3)))
                         .addGap(18, 18, 18)
-                        .addComponent(ACEPTAR, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -116,17 +116,17 @@ public class Entrar extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void USUARIOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_USUARIOActionPerformed
+    private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
 
-    }//GEN-LAST:event_USUARIOActionPerformed
+    }//GEN-LAST:event_usuarioActionPerformed
 
-    private void ACEPTARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ACEPTARActionPerformed
+    private void aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarActionPerformed
         //USUARIO
         BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
         ProxyProteccion proxy;
 
-        String usua = USUARIO.getText();
-        String seña = new String(CONTRASEÑA.getPassword());
+        String usua = usuario.getText();
+        String seña = new String(contrasena.getPassword());
         Empleado emp = new Empleado(usua, seña);
         proxy = new ProxyProteccion(emp);
         if (!proxy.logueo()) {
@@ -137,11 +137,11 @@ public class Entrar extends javax.swing.JFrame {
         }
 
 
-    }//GEN-LAST:event_ACEPTARActionPerformed
+    }//GEN-LAST:event_aceptarActionPerformed
 
-    private void CONTRASEÑAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CONTRASEÑAActionPerformed
+    private void contrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contrasenaActionPerformed
 
-    }//GEN-LAST:event_CONTRASEÑAActionPerformed
+    }//GEN-LAST:event_contrasenaActionPerformed
 
     public static void main(String args[]) {
 
@@ -189,12 +189,12 @@ public class Entrar extends javax.swing.JFrame {
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ACEPTAR;
-    private javax.swing.JPasswordField CONTRASEÑA;
-    private javax.swing.JTextField USUARIO;
+    private javax.swing.JButton aceptar;
+    private javax.swing.JPasswordField contrasena;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JTextField usuario;
     // End of variables declaration//GEN-END:variables
 }

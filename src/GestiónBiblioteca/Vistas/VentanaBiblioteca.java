@@ -247,7 +247,7 @@ public VentanaBiblioteca(JFrame ventana) {
 
     private void PRESTARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESTARActionPerformed
         // TODO add your handling code here:
-        VPrestarPublicacion p = new VPrestarPublicacion(this);
+        VPrestamo p = new VPrestamo(this);
     }//GEN-LAST:event_PRESTARActionPerformed
 
     private void DEVOLVERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DEVOLVERActionPerformed

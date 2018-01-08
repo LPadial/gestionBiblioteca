@@ -3,6 +3,7 @@ package GestiónBiblioteca.Vistas;
 
 import GestiónBiblioteca.Biblioteca;
 import GestiónBiblioteca.Tesis;
+import java.awt.HeadlessException;
 import java.io.File;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -545,7 +546,7 @@ public class VTesis extends javax.swing.JFrame {
             Biblioteca.altaPublicacion(publi);
             
             JOptionPane.showMessageDialog(this, "TESIS dada de alta.", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
-        } catch (Exception e) {
+        } catch (HeadlessException | NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Error en alta"+e.getMessage(), "Mensaje", JOptionPane.ERROR_MESSAGE);
         }
             

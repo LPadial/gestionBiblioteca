@@ -484,7 +484,7 @@ public class VRevista extends javax.swing.JFrame {
             
             Revista publi = new Revista(periodo,volumen,npublicacion,añoDisponible,localizacion,codigo,isbn,titulo,autores,fecha,foto,paginas,coleccion,materia,observacion);
             
-            Biblioteca.AltaPublicación(publi); 
+            Biblioteca.altaPublicacion(publi); 
             
             JOptionPane.showMessageDialog(this, "Revista dada de alta.", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception e) {

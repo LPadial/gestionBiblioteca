@@ -9,7 +9,8 @@ public class Biblioteca {
     private static HashMap<String, Socio> socios = new HashMap<>();
     private static HashMap<String, Empleado> empleados = new HashMap<>();
     private static HashMap<String, Autor> autores = new HashMap<>();
-    private static HashMap<String, Prestar> prestar = new HashMap<>();
+    private static HashMap<String, Prestar> prestarp = new HashMap<>();
+    private static HashMap<String, String> prestarm = new HashMap<>();
     private static ArrayList<Libro> libro;
     private static ArrayList<Revista> revista;
     private static ArrayList<ProyectoFinal> proyecto;
@@ -193,14 +194,18 @@ public class Biblioteca {
     public static void prestamoPublicacion(String codigoPubli, String codigosocio, GregorianCalendar fprestar) throws IOException {
         Publicacion m = buscarPublicacion(codigoPubli);
         Prestar prest = m.prestarPublicacion(socios.get(codigosocio), fprestar);
-        prestar.put(m.getCodigoPubli(), prest);
+        prestarp.put(m.getCodigoPubli(), prest);
 
+    }
+    
+     public static void prestamoMaterial(String auxMaterial, String auxMarca, String codigosocio, GregorianCalendar fprestar) {
+        prestarm.put(auxMaterial, auxMarca);
     }
 
     //FUNCION PARA LA DEVOLUCIÓN DE PUBLICACIONES.
     public static int devolverPublicacion(String codigoPubli, GregorianCalendar fdevolver) throws IOException {
         Publicacion m = buscarPublicacion(codigoPubli);
-        Prestar prest = prestar.get(codigoPubli);
+        Prestar prest = prestarp.get(codigoPubli);
         prest.setFechaDevolucion(fdevolver);
         return m.devolverPublicacion(prest);
 
@@ -289,7 +294,7 @@ public class Biblioteca {
             dar.close();
             FileOutputStream pre = new FileOutputStream("préstamo.dat");
             ObjectOutputStream pre1 = new ObjectOutputStream(pre);
-            pre1.writeObject(prestar);
+            pre1.writeObject(prestarp);
             pre.close();
             FileOutputStream aut = new FileOutputStream("autores.dat");
             ObjectOutputStream aut1 = new ObjectOutputStream(aut);
@@ -317,7 +322,7 @@ public class Biblioteca {
             rar.close();
             FileInputStream pres = new FileInputStream("préstamo.dat");
             ObjectInputStream pres1 = new ObjectInputStream(pres);
-            prestar = (HashMap<String, Prestar>) pres1.readObject();
+            prestarp = (HashMap<String, Prestar>) pres1.readObject();
             pres.close();
             FileInputStream aut = new FileInputStream("autores.dat");
             ObjectInputStream aut1 = new ObjectInputStream(aut);
@@ -351,5 +356,7 @@ public class Biblioteca {
     public static void añadirAutor(Autor aut) {
         autores.put(aut.getCodigo(), aut);
     }
+
+   
 
 }
