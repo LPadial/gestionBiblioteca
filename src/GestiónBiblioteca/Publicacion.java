@@ -30,9 +30,10 @@ public abstract class Publicacion implements Serializable{
     private String materia;
     private String observaciones;
     private boolean estado;
+    private String codAutor;
 
    //CONSTRUCTOR.
-    public Publicacion(String codigoPubli, String ISBN, String titulo, String autor, GregorianCalendar fechaPublicación, String fotografia, int paginas, boolean coleccion, String materia, String observaciones) {
+    public Publicacion(String codigoPubli, String ISBN, String titulo, String autor, GregorianCalendar fechaPublicación, String fotografia, int paginas, boolean coleccion, String materia, String observaciones, String codAutor) {
         this.codigoPubli = codigoPubli;
         this.ISBN = ISBN;
         this.titulo = titulo;
@@ -43,7 +44,7 @@ public abstract class Publicacion implements Serializable{
         this.coleccion = coleccion;
         this.materia = materia;
         this.observaciones = observaciones;
-        
+        this.codAutor = codAutor;
     }
     
      public boolean isEstado() {
@@ -156,4 +157,12 @@ public abstract class Publicacion implements Serializable{
           vuelta.Factura(false);
           return vuelta.calcularTardanza();
         }
+      
+    public String getCodAutor(){
+        return codAutor;
+    }
+    
+    public void setCodAutor(String codAutor){
+        this.codAutor = codAutor;
+    }
 }

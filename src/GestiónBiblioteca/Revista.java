@@ -20,8 +20,8 @@ public class Revista extends Publicacion {
     private String localizacion;
 
     //CONSTRUCTOR.
-    public Revista(String periodicidad, int volumen, int numeroPublicacion, int añoDisponible, String localizacion, String codigo, String ISBN, String titulo, String autores, GregorianCalendar fechaPublicación, String fotografia, int paginas, boolean coleccion, String materia, String observaciones) {
-        super(codigo, ISBN, titulo, autores, fechaPublicación, fotografia, paginas, coleccion, materia, observaciones);
+    public Revista(String periodicidad, int volumen, int numeroPublicacion, int añoDisponible, String localizacion, String codigo, String ISBN, String titulo, String autores, GregorianCalendar fechaPublicación, String fotografia, int paginas, boolean coleccion, String materia, String observaciones, String codAutor) {
+        super(codigo, ISBN, titulo, autores, fechaPublicación, fotografia, paginas, coleccion, materia, observaciones, codAutor);
         this.periodicidad = periodicidad;
         this.volumen = volumen;
         this.numeroPublicacion = numeroPublicacion;

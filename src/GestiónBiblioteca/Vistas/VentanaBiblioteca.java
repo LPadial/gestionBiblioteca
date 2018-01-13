@@ -19,13 +19,13 @@ public VentanaBiblioteca(JFrame ventana) {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        ALTA = new javax.swing.JButton();
-        BAJA = new javax.swing.JButton();
-        CONSULTA = new javax.swing.JButton();
-        PRESTAR = new javax.swing.JButton();
-        DEVOLVER = new javax.swing.JButton();
-        AltaSocio = new javax.swing.JButton();
-        BajaSocio = new javax.swing.JButton();
+        alta = new javax.swing.JButton();
+        baja = new javax.swing.JButton();
+        consulta = new javax.swing.JButton();
+        prestar = new javax.swing.JButton();
+        devolver = new javax.swing.JButton();
+        altaSocio = new javax.swing.JButton();
+        bajaSocio = new javax.swing.JButton();
         altaAutor = new javax.swing.JButton();
         bajaEmpleado = new javax.swing.JButton();
         altaEmpleado = new javax.swing.JButton();
@@ -51,59 +51,59 @@ public VentanaBiblioteca(JFrame ventana) {
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        ALTA.setFont(new java.awt.Font("Cantarell", 3, 14)); // NOI18N
-        ALTA.setText("Alta Publicación");
-        ALTA.addActionListener(new java.awt.event.ActionListener() {
+        alta.setFont(new java.awt.Font("Cantarell", 3, 14)); // NOI18N
+        alta.setText("Alta Publicación");
+        alta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ALTAActionPerformed(evt);
+                altaActionPerformed(evt);
             }
         });
 
-        BAJA.setFont(new java.awt.Font("Cantarell", 3, 14)); // NOI18N
-        BAJA.setText("Baja Publicación");
-        BAJA.addActionListener(new java.awt.event.ActionListener() {
+        baja.setFont(new java.awt.Font("Cantarell", 3, 14)); // NOI18N
+        baja.setText("Baja Publicación");
+        baja.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BAJAActionPerformed(evt);
+                bajaActionPerformed(evt);
             }
         });
 
-        CONSULTA.setFont(new java.awt.Font("Cantarell", 3, 14)); // NOI18N
-        CONSULTA.setText("Consulta Publicaciones");
-        CONSULTA.addActionListener(new java.awt.event.ActionListener() {
+        consulta.setFont(new java.awt.Font("Cantarell", 3, 14)); // NOI18N
+        consulta.setText("Consulta Publicaciones");
+        consulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CONSULTAActionPerformed(evt);
+                consultaActionPerformed(evt);
             }
         });
 
-        PRESTAR.setFont(new java.awt.Font("Cantarell", 3, 14)); // NOI18N
-        PRESTAR.setText("Préstamo");
-        PRESTAR.addActionListener(new java.awt.event.ActionListener() {
+        prestar.setFont(new java.awt.Font("Cantarell", 3, 14)); // NOI18N
+        prestar.setText("Préstamo");
+        prestar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PRESTARActionPerformed(evt);
+                prestarActionPerformed(evt);
             }
         });
 
-        DEVOLVER.setFont(new java.awt.Font("Cantarell", 3, 14)); // NOI18N
-        DEVOLVER.setText("Devolución");
-        DEVOLVER.addActionListener(new java.awt.event.ActionListener() {
+        devolver.setFont(new java.awt.Font("Cantarell", 3, 14)); // NOI18N
+        devolver.setText("Devolución");
+        devolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DEVOLVERActionPerformed(evt);
+                devolverActionPerformed(evt);
             }
         });
 
-        AltaSocio.setFont(new java.awt.Font("Cantarell", 3, 14)); // NOI18N
-        AltaSocio.setText("Alta Socio");
-        AltaSocio.addActionListener(new java.awt.event.ActionListener() {
+        altaSocio.setFont(new java.awt.Font("Cantarell", 3, 14)); // NOI18N
+        altaSocio.setText("Alta Socio");
+        altaSocio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AltaSocioActionPerformed(evt);
+                altaSocioActionPerformed(evt);
             }
         });
 
-        BajaSocio.setFont(new java.awt.Font("Cantarell", 3, 14)); // NOI18N
-        BajaSocio.setText("Baja Socio");
-        BajaSocio.addActionListener(new java.awt.event.ActionListener() {
+        bajaSocio.setFont(new java.awt.Font("Cantarell", 3, 14)); // NOI18N
+        bajaSocio.setText("Baja Socio");
+        bajaSocio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BajaSocioActionPerformed(evt);
+                bajaSocioActionPerformed(evt);
             }
         });
 
@@ -145,7 +145,7 @@ public VentanaBiblioteca(JFrame ventana) {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(129, 129, 129)
-                .addComponent(CONSULTA, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(consulta, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -154,15 +154,15 @@ public VentanaBiblioteca(JFrame ventana) {
                     .addComponent(altaAutor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(ALTA, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(PRESTAR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(AltaSocio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(alta, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(prestar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(altaSocio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(57, 57, 57)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(BAJA, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-                        .addComponent(DEVOLVER, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BajaSocio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(baja, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+                        .addComponent(devolver, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(bajaSocio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(desactivarAutor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(bajaEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18))
@@ -172,19 +172,19 @@ public VentanaBiblioteca(JFrame ventana) {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(ALTA, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                    .addComponent(BAJA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(alta, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(baja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CONSULTA, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(consulta, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(DEVOLVER, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(devolver, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(PRESTAR, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                        .addComponent(prestar, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                         .addGap(6, 6, 6)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BajaSocio, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AltaSocio, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bajaSocio, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(altaSocio, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(altaAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -230,40 +230,40 @@ public VentanaBiblioteca(JFrame ventana) {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ALTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ALTAActionPerformed
+    private void altaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altaActionPerformed
         // TODO add your handling code here:
         VAltaPublicacion a = new VAltaPublicacion(this);
-    }//GEN-LAST:event_ALTAActionPerformed
+    }//GEN-LAST:event_altaActionPerformed
 
-    private void BAJAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BAJAActionPerformed
+    private void bajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bajaActionPerformed
         // TODO add your handling code here:
         VBajaPublicacion b = new VBajaPublicacion(this);
-    }//GEN-LAST:event_BAJAActionPerformed
+    }//GEN-LAST:event_bajaActionPerformed
 
-    private void CONSULTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CONSULTAActionPerformed
+    private void consultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaActionPerformed
         // TODO add your handling code here:
         VConsultaPublicacion c = new VConsultaPublicacion(this);
-    }//GEN-LAST:event_CONSULTAActionPerformed
+    }//GEN-LAST:event_consultaActionPerformed
 
-    private void PRESTARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESTARActionPerformed
+    private void prestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prestarActionPerformed
         // TODO add your handling code here:
         VPrestamo p = new VPrestamo(this);
-    }//GEN-LAST:event_PRESTARActionPerformed
+    }//GEN-LAST:event_prestarActionPerformed
 
-    private void DEVOLVERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DEVOLVERActionPerformed
+    private void devolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_devolverActionPerformed
         // TODO add your handling code here:
         VDevolverPublicacion d = new VDevolverPublicacion(this);
-    }//GEN-LAST:event_DEVOLVERActionPerformed
+    }//GEN-LAST:event_devolverActionPerformed
 
-    private void AltaSocioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AltaSocioActionPerformed
+    private void altaSocioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altaSocioActionPerformed
         // TODO add your handling code here:
         VAltaSocio s = new VAltaSocio(this);
-    }//GEN-LAST:event_AltaSocioActionPerformed
+    }//GEN-LAST:event_altaSocioActionPerformed
 
-    private void BajaSocioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BajaSocioActionPerformed
+    private void bajaSocioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bajaSocioActionPerformed
         // TODO add your handling code here:
         VBajaSocio f = new VBajaSocio(this);
-    }//GEN-LAST:event_BajaSocioActionPerformed
+    }//GEN-LAST:event_bajaSocioActionPerformed
 
     private void recuperar(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_recuperar
         Biblioteca.recuperar();
@@ -301,19 +301,19 @@ public VentanaBiblioteca(JFrame ventana) {
             System.out.println("Error: " + e.toString());
         }}
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ALTA;
-    private javax.swing.JButton AltaSocio;
-    private javax.swing.JButton BAJA;
-    private javax.swing.JButton BajaSocio;
-    private javax.swing.JButton CONSULTA;
-    private javax.swing.JButton DEVOLVER;
-    private javax.swing.JButton PRESTAR;
+    private javax.swing.JButton alta;
     private javax.swing.JButton altaAutor;
     private javax.swing.JButton altaEmpleado;
+    private javax.swing.JButton altaSocio;
+    private javax.swing.JButton baja;
     private javax.swing.JButton bajaEmpleado;
+    private javax.swing.JButton bajaSocio;
+    private javax.swing.JButton consulta;
     private javax.swing.JButton desactivarAutor;
+    private javax.swing.JButton devolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton prestar;
     // End of variables declaration//GEN-END:variables
 }

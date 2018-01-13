@@ -1,8 +1,9 @@
-
 package GestiónBiblioteca.Vistas;
 
 import GestiónBiblioteca.Biblioteca;
+import GestiónBiblioteca.Observer.Observer;
 import GestiónBiblioteca.Revista;
+import java.awt.HeadlessException;
 import java.io.File;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -13,7 +14,8 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class VRevista extends javax.swing.JFrame {
-    private JFrame principal;
+
+    private final JFrame principal;
 
     public VRevista(JFrame ventana) {
         initComponents();
@@ -27,43 +29,45 @@ public class VRevista extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        ALTA = new javax.swing.JToggleButton();
+        alta = new javax.swing.JToggleButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        VOLUMEN = new javax.swing.JTextField();
-        NUMERO = new javax.swing.JTextField();
-        PAGINAS = new javax.swing.JTextField();
-        CODIGO = new javax.swing.JTextField();
-        AUTORES = new javax.swing.JTextField();
-        LOCALIZACION = new javax.swing.JTextField();
+        volumen = new javax.swing.JTextField();
+        numero = new javax.swing.JTextField();
+        paginas = new javax.swing.JTextField();
+        codigo = new javax.swing.JTextField();
+        autores = new javax.swing.JTextField();
+        localizacion = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        FECHA = new javax.swing.JFormattedTextField();
+        fecha = new javax.swing.JFormattedTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        COLLECTION = new javax.swing.JCheckBox();
+        collection = new javax.swing.JCheckBox();
         jLabel5 = new javax.swing.JLabel();
-        ISBN = new javax.swing.JTextField();
+        isbn = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        TITULO = new javax.swing.JTextField();
+        titulo = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        FOTO1 = new javax.swing.JTextField();
-        EXAMINAR = new javax.swing.JButton();
+        foto = new javax.swing.JTextField();
+        examinar = new javax.swing.JButton();
         ov = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         observaciones = new javax.swing.JTextArea();
         jLabel15 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        MATERIA = new javax.swing.JTextField();
+        materia = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        NPUBLICACION = new javax.swing.JTextField();
-        PERIODICIDAD = new javax.swing.JComboBox();
-        ADISPONIBLE = new javax.swing.JTextField();
+        nPublicacion = new javax.swing.JTextField();
+        periocidad = new javax.swing.JComboBox();
+        aDisponible = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        codAutor = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("\"BIBLIOTECA UNIVERSITARIA\"");
@@ -77,11 +81,11 @@ public class VRevista extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 102));
         jLabel1.setText("ALTA REVISTA:");
 
-        ALTA.setFont(new java.awt.Font("Cambria", 3, 12)); // NOI18N
-        ALTA.setText("DAR DE ALTA");
-        ALTA.addActionListener(new java.awt.event.ActionListener() {
+        alta.setFont(new java.awt.Font("Cambria", 3, 12)); // NOI18N
+        alta.setText("DAR DE ALTA");
+        alta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ALTAActionPerformed(evt);
+                altaActionPerformed(evt);
             }
         });
 
@@ -96,39 +100,39 @@ public class VRevista extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 51, 102));
         jLabel4.setText("TÍTULO:");
 
-        VOLUMEN.addActionListener(new java.awt.event.ActionListener() {
+        volumen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VOLUMENActionPerformed(evt);
+                volumenActionPerformed(evt);
             }
         });
 
-        NUMERO.addActionListener(new java.awt.event.ActionListener() {
+        numero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NUMEROActionPerformed(evt);
+                numeroActionPerformed(evt);
             }
         });
 
-        PAGINAS.addActionListener(new java.awt.event.ActionListener() {
+        paginas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PAGINASActionPerformed(evt);
+                paginasActionPerformed(evt);
             }
         });
 
-        CODIGO.addActionListener(new java.awt.event.ActionListener() {
+        codigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CODIGOActionPerformed(evt);
+                codigoActionPerformed(evt);
             }
         });
 
-        AUTORES.addActionListener(new java.awt.event.ActionListener() {
+        autores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AUTORESActionPerformed(evt);
+                autoresActionPerformed(evt);
             }
         });
 
-        LOCALIZACION.addActionListener(new java.awt.event.ActionListener() {
+        localizacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LOCALIZACIONActionPerformed(evt);
+                localizacionActionPerformed(evt);
             }
         });
 
@@ -140,7 +144,7 @@ public class VRevista extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(0, 51, 102));
         jLabel7.setText("PÁGINAS:");
 
-        FECHA.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        fecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
 
         jLabel8.setFont(new java.awt.Font("Cambria", 3, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 51, 102));
@@ -150,9 +154,9 @@ public class VRevista extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(0, 51, 102));
         jLabel9.setText("PERIODICIDAD:");
 
-        COLLECTION.addActionListener(new java.awt.event.ActionListener() {
+        collection.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                COLLECTIONActionPerformed(evt);
+                collectionActionPerformed(evt);
             }
         });
 
@@ -160,9 +164,9 @@ public class VRevista extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 51, 102));
         jLabel5.setText("AUTORES:");
 
-        ISBN.addActionListener(new java.awt.event.ActionListener() {
+        isbn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ISBNActionPerformed(evt);
+                isbnActionPerformed(evt);
             }
         });
 
@@ -170,9 +174,9 @@ public class VRevista extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 51, 102));
         jLabel2.setText("CÓDIGO:");
 
-        TITULO.addActionListener(new java.awt.event.ActionListener() {
+        titulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TITULOActionPerformed(evt);
+                tituloActionPerformed(evt);
             }
         });
 
@@ -192,16 +196,16 @@ public class VRevista extends javax.swing.JFrame {
         jLabel13.setForeground(new java.awt.Color(0, 51, 102));
         jLabel13.setText("LOCALIZACIÓN:");
 
-        FOTO1.addActionListener(new java.awt.event.ActionListener() {
+        foto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FOTO1ActionPerformed(evt);
+                fotoActionPerformed(evt);
             }
         });
 
-        EXAMINAR.setText("Examinar");
-        EXAMINAR.addActionListener(new java.awt.event.ActionListener() {
+        examinar.setText("Examinar");
+        examinar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EXAMINARActionPerformed(evt);
+                examinarActionPerformed(evt);
             }
         });
 
@@ -223,9 +227,9 @@ public class VRevista extends javax.swing.JFrame {
         jLabel18.setForeground(new java.awt.Color(0, 51, 102));
         jLabel18.setText("MATERIA:");
 
-        MATERIA.addActionListener(new java.awt.event.ActionListener() {
+        materia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MATERIAActionPerformed(evt);
+                materiaActionPerformed(evt);
             }
         });
 
@@ -233,20 +237,24 @@ public class VRevista extends javax.swing.JFrame {
         jLabel14.setForeground(new java.awt.Color(0, 51, 102));
         jLabel14.setText("N.PUBLICACIÓN:");
 
-        PERIODICIDAD.setFont(new java.awt.Font("Cambria", 3, 12)); // NOI18N
-        PERIODICIDAD.setForeground(new java.awt.Color(0, 51, 102));
-        PERIODICIDAD.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "...", "TRIMESTRAL", "SEMESTRAL", "ANUAL" }));
-        PERIODICIDAD.addActionListener(new java.awt.event.ActionListener() {
+        periocidad.setFont(new java.awt.Font("Cambria", 3, 12)); // NOI18N
+        periocidad.setForeground(new java.awt.Color(0, 51, 102));
+        periocidad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "...", "TRIMESTRAL", "SEMESTRAL", "ANUAL" }));
+        periocidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PERIODICIDADActionPerformed(evt);
+                periocidadActionPerformed(evt);
             }
         });
 
-        ADISPONIBLE.addActionListener(new java.awt.event.ActionListener() {
+        aDisponible.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ADISPONIBLEActionPerformed(evt);
+                aDisponibleActionPerformed(evt);
             }
         });
+
+        jLabel16.setFont(new java.awt.Font("Cambria", 3, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 51, 102));
+        jLabel16.setText("CODIGO AUTOR:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -258,7 +266,7 @@ public class VRevista extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addGap(18, 18, 18)
-                        .addComponent(FECHA))
+                        .addComponent(fecha))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
@@ -267,10 +275,10 @@ public class VRevista extends javax.swing.JFrame {
                             .addComponent(jLabel5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CODIGO, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ISBN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TITULO, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AUTORES, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(codigo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(isbn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(titulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(autores, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
@@ -281,30 +289,32 @@ public class VRevista extends javax.swing.JFrame {
                             .addComponent(jLabel12)
                             .addComponent(jLabel13)
                             .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel14))
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(MATERIA)
-                            .addComponent(PAGINAS)
-                            .addComponent(VOLUMEN)
-                            .addComponent(NUMERO)
-                            .addComponent(LOCALIZACION)
+                            .addComponent(materia)
+                            .addComponent(paginas)
+                            .addComponent(volumen)
+                            .addComponent(numero)
+                            .addComponent(localizacion)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(COLLECTION)
+                                .addComponent(collection)
                                 .addGap(63, 63, 63))
-                            .addComponent(NPUBLICACION, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
-                            .addComponent(PERIODICIDAD, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ADISPONIBLE))))
+                            .addComponent(nPublicacion, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                            .addComponent(periocidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(aDisponible)
+                            .addComponent(codAutor))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1)
-                    .addComponent(FOTO1)
+                    .addComponent(foto)
                     .addComponent(ov)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(EXAMINAR, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(examinar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(45, 45, 45))
         );
         jPanel1Layout.setVerticalGroup(
@@ -315,57 +325,57 @@ public class VRevista extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(CODIGO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(ISBN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(isbn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(TITULO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AUTORES, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(autores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(FECHA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(20, 20, 20)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel7)
-                            .addComponent(PAGINAS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(paginas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(COLLECTION)
+                                    .addComponent(collection)
                                     .addComponent(jLabel8))
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel9))
-                            .addComponent(PERIODICIDAD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(periocidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel10)
-                            .addComponent(VOLUMEN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(volumen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
-                            .addComponent(NUMERO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(numero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel12)
                                 .addGap(5, 5, 5))
-                            .addComponent(ADISPONIBLE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(aDisponible, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(23, 23, 23)
                                 .addComponent(jLabel13))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(LOCALIZACION, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(localizacion, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42)
@@ -376,19 +386,23 @@ public class VRevista extends javax.swing.JFrame {
                                 .addGap(114, 114, 114)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel15)
-                                    .addComponent(EXAMINAR))
+                                    .addComponent(examinar))
                                 .addGap(18, 18, 18)
-                                .addComponent(FOTO1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(foto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(MATERIA, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(materia, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(NPUBLICACION, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(50, Short.MAX_VALUE))
+                    .addComponent(nPublicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(codAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -396,14 +410,14 @@ public class VRevista extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
             .addGroup(layout.createSequentialGroup()
                 .addGap(208, 208, 208)
                 .addComponent(jLabel1)
                 .addGap(44, 44, 44)
-                .addComponent(ALTA, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(alta, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -412,128 +426,136 @@ public class VRevista extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(ALTA, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(alta, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(667, 733));
+        setSize(new java.awt.Dimension(667, 790));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ISBNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ISBNActionPerformed
+    private void isbnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isbnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ISBNActionPerformed
+    }//GEN-LAST:event_isbnActionPerformed
 
-    private void TITULOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TITULOActionPerformed
+    private void tituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tituloActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TITULOActionPerformed
+    }//GEN-LAST:event_tituloActionPerformed
 
-    private void CODIGOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CODIGOActionPerformed
+    private void codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CODIGOActionPerformed
+    }//GEN-LAST:event_codigoActionPerformed
 
-    private void PAGINASActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PAGINASActionPerformed
+    private void paginasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paginasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PAGINASActionPerformed
+    }//GEN-LAST:event_paginasActionPerformed
 
-    private void AUTORESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AUTORESActionPerformed
+    private void autoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_autoresActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_AUTORESActionPerformed
+    }//GEN-LAST:event_autoresActionPerformed
 
-    private void NUMEROActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NUMEROActionPerformed
+    private void numeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numeroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NUMEROActionPerformed
+    }//GEN-LAST:event_numeroActionPerformed
 
-    private void VOLUMENActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VOLUMENActionPerformed
+    private void volumenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volumenActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_VOLUMENActionPerformed
+    }//GEN-LAST:event_volumenActionPerformed
 
-    private void LOCALIZACIONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LOCALIZACIONActionPerformed
+    private void localizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_localizacionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_LOCALIZACIONActionPerformed
+    }//GEN-LAST:event_localizacionActionPerformed
 
-    private void ALTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ALTAActionPerformed
+    private void altaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altaActionPerformed
         // DA DE ALTA LAS PUBLICACIÓN:
-        
-         try{
-                
-            String periodo = (String) PERIODICIDAD.getSelectedItem(); 
-            String volumen1 = VOLUMEN.getText();
-            Integer volumen = Integer.parseInt(volumen1);
-            String npublicacion1 = NPUBLICACION.getText();
-            Integer npublicacion = Integer.parseInt(npublicacion1);
-            String añoDisponible1 = ADISPONIBLE.getText();
-            Integer añoDisponible = Integer.parseInt(añoDisponible1);
-            String localizacion = LOCALIZACION.getText();
-            String codigo = CODIGO.getText();
-            String isbn = ISBN.getText();
-            String titulo = TITULO.getText();
-            String autores = AUTORES.getText();
-            
-            GregorianCalendar fecha = new GregorianCalendar();
-            fecha.setTime((Date)FECHA.getValue());
-            
-            String foto = FOTO1.getText();
-            String paginas1 = PAGINAS.getText();
-            Integer paginas = Integer.parseInt(paginas1);
-            boolean coleccion = COLLECTION.isSelected();
-            String materia = MATERIA.getText();
-            String observacion = observaciones.getText();
-            
-            Revista publi = new Revista(periodo,volumen,npublicacion,añoDisponible,localizacion,codigo,isbn,titulo,autores,fecha,foto,paginas,coleccion,materia,observacion);
-            
-            Biblioteca.altaPublicacion(publi); 
-            
-            JOptionPane.showMessageDialog(this, "Revista dada de alta.", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error en alta"+e.getMessage(), "Mensaje", JOptionPane.ERROR_MESSAGE);
+
+        try {
+
+            String auxPeriodo = (String) periocidad.getSelectedItem();
+            String auxVolumen1 = volumen.getText();
+            Integer auxVolumen = Integer.parseInt(auxVolumen1);
+            String auxNPublicacion1 = nPublicacion.getText();
+            Integer auxNPublicacion = Integer.parseInt(auxNPublicacion1);
+            String auxAñoDisponible1 = aDisponible.getText();
+            Integer auxAñoDisponible = Integer.parseInt(auxAñoDisponible1);
+            String auxLocalizacion = localizacion.getText();
+            String auxCodigo = codigo.getText();
+            String auxIsbn = isbn.getText();
+            String auxTitulo = titulo.getText();
+            String auxAutores = autores.getText();
+
+            GregorianCalendar auxFecha = new GregorianCalendar();
+            auxFecha.setTime((Date) fecha.getValue());
+
+            String auxFoto = foto.getText();
+            String auxPaginas1 = paginas.getText();
+            Integer auxPaginas = Integer.parseInt(auxPaginas1);
+            boolean auxColeccion = collection.isSelected();
+            String auxMateria = materia.getText();
+            String auxObservacion = observaciones.getText();
+            String auxCodAutor = codAutor.getText();
+
+            if (Biblioteca.buscarAutor(auxCodAutor)) {
+                Revista publi = new Revista(auxPeriodo, auxVolumen, auxNPublicacion, auxAñoDisponible, auxLocalizacion, auxCodigo, auxIsbn, auxTitulo, auxAutores, auxFecha, auxFoto, auxPaginas, auxColeccion, auxMateria, auxObservacion, auxCodAutor);
+
+                Biblioteca.altaPublicacion(publi);
+
+                //comunicacion con el observer
+                Observer.aumentarPublicacionesAutor(auxCodAutor);
+
+                JOptionPane.showMessageDialog(this, "Revista dada de alta.", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "El código de autor no existe");
+            }
+        } catch (HeadlessException | NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Error en alta" + e.getMessage(), "Mensaje", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_ALTAActionPerformed
+    }//GEN-LAST:event_altaActionPerformed
 
-    private void FOTO1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FOTO1ActionPerformed
+    private void fotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fotoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FOTO1ActionPerformed
+    }//GEN-LAST:event_fotoActionPerformed
 
-    private void EXAMINARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXAMINARActionPerformed
+    private void examinarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_examinarActionPerformed
         // BOTÓN CON EL QUE SELECCIONAMOS LA IMAGEN QUE DESEAMOS MOSTRAR.
-          String adr="";
-                
-          JFileChooser examinar = new JFileChooser();                //creamos la ventana .
-          FileNameExtensionFilter filtroImagen=new FileNameExtensionFilter("JPG, PNG & GIF","jpg","png","gif");
-          examinar.setFileFilter(filtroImagen);                      //Filtro para que sólo se muestren archivos con una determinada extensión.
-          int seleccion = examinar.showSaveDialog(examinar);
-          //Comprobar si se ha pulsado EXAMINAR.      
-          if (seleccion == JFileChooser.APPROVE_OPTION){
-                
-                File fichero = examinar.getSelectedFile();          //Crear un objeto File con el archivo elegido
-                adr =fichero.getAbsolutePath();
-                FOTO1.setText(adr);                                 //Mostrar el nombre del archvivo en un campo de texto
-          } 
-    }//GEN-LAST:event_EXAMINARActionPerformed
+        String adr = "";
 
-    private void COLLECTIONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_COLLECTIONActionPerformed
+        JFileChooser auxExaminar = new JFileChooser();                //creamos la ventana .
+        FileNameExtensionFilter filtroImagen = new FileNameExtensionFilter("JPG, PNG & GIF", "jpg", "png", "gif");
+        auxExaminar.setFileFilter(filtroImagen);                      //Filtro para que sólo se muestren archivos con una determinada extensión.
+        int seleccion = auxExaminar.showSaveDialog(examinar);
+        //Comprobar si se ha pulsado EXAMINAR.      
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+
+            File fichero = auxExaminar.getSelectedFile();          //Crear un objeto File con el archivo elegido
+            adr = fichero.getAbsolutePath();
+            foto.setText(adr);                                 //Mostrar el nombre del archvivo en un campo de texto
+        }
+    }//GEN-LAST:event_examinarActionPerformed
+
+    private void collectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_collectionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_COLLECTIONActionPerformed
+    }//GEN-LAST:event_collectionActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         // TODO add your handling code here:
-         principal.setVisible(true);
+        principal.setVisible(true);
     }//GEN-LAST:event_formWindowClosed
 
-    private void MATERIAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MATERIAActionPerformed
+    private void materiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_MATERIAActionPerformed
+    }//GEN-LAST:event_materiaActionPerformed
 
-    private void PERIODICIDADActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PERIODICIDADActionPerformed
+    private void periocidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_periocidadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PERIODICIDADActionPerformed
+    }//GEN-LAST:event_periocidadActionPerformed
 
-    private void ADISPONIBLEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADISPONIBLEActionPerformed
+    private void aDisponibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aDisponibleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ADISPONIBLEActionPerformed
- private void getImagen() {
+    }//GEN-LAST:event_aDisponibleActionPerformed
+    private void getImagen() {
         try {
             jLabel17.setSize(214, 162);
             ImageIcon imagen = new ImageIcon("UAH.jpg");
@@ -542,26 +564,20 @@ public class VRevista extends javax.swing.JFrame {
             jLabel17.setIcon(imgRedimensionada);
         } catch (Exception e) {
             System.out.println("Error: " + e.toString());
-        }}
-   
+        }
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField ADISPONIBLE;
-    private javax.swing.JToggleButton ALTA;
-    private javax.swing.JTextField AUTORES;
-    private javax.swing.JTextField CODIGO;
-    private javax.swing.JCheckBox COLLECTION;
-    private javax.swing.JButton EXAMINAR;
-    private javax.swing.JFormattedTextField FECHA;
-    private javax.swing.JTextField FOTO1;
-    private javax.swing.JTextField ISBN;
-    private javax.swing.JTextField LOCALIZACION;
-    private javax.swing.JTextField MATERIA;
-    private javax.swing.JTextField NPUBLICACION;
-    private javax.swing.JTextField NUMERO;
-    private javax.swing.JTextField PAGINAS;
-    private javax.swing.JComboBox PERIODICIDAD;
-    private javax.swing.JTextField TITULO;
-    private javax.swing.JTextField VOLUMEN;
+    private javax.swing.JTextField aDisponible;
+    private javax.swing.JToggleButton alta;
+    private javax.swing.JTextField autores;
+    private javax.swing.JTextField codAutor;
+    private javax.swing.JTextField codigo;
+    private javax.swing.JCheckBox collection;
+    private javax.swing.JButton examinar;
+    private javax.swing.JFormattedTextField fecha;
+    private javax.swing.JTextField foto;
+    private javax.swing.JTextField isbn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -569,6 +585,7 @@ public class VRevista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
@@ -581,7 +598,15 @@ public class VRevista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField localizacion;
+    private javax.swing.JTextField materia;
+    private javax.swing.JTextField nPublicacion;
+    private javax.swing.JTextField numero;
     private javax.swing.JTextArea observaciones;
     private javax.swing.JLabel ov;
+    private javax.swing.JTextField paginas;
+    private javax.swing.JComboBox periocidad;
+    private javax.swing.JTextField titulo;
+    private javax.swing.JTextField volumen;
     // End of variables declaration//GEN-END:variables
 }

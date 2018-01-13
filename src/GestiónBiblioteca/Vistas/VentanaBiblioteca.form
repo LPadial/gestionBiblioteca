@@ -98,7 +98,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
-                  <Component id="CONSULTA" min="-2" pref="219" max="-2" attributes="0"/>
+                  <Component id="consulta" min="-2" pref="219" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
@@ -108,17 +108,17 @@
                       <Component id="altaAutor" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="ALTA" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="alta" min="-2" pref="200" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="PRESTAR" max="32767" attributes="0"/>
-                      <Component id="AltaSocio" max="32767" attributes="0"/>
+                      <Component id="prestar" max="32767" attributes="0"/>
+                      <Component id="altaSocio" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="BAJA" pref="192" max="32767" attributes="0"/>
-                          <Component id="DEVOLVER" alignment="1" max="32767" attributes="0"/>
-                          <Component id="BajaSocio" alignment="0" max="32767" attributes="0"/>
+                          <Component id="baja" pref="192" max="32767" attributes="0"/>
+                          <Component id="devolver" alignment="1" max="32767" attributes="0"/>
+                          <Component id="bajaSocio" alignment="0" max="32767" attributes="0"/>
                           <Component id="desactivarAutor" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <Component id="bajaEmpleado" min="-2" pref="192" max="-2" attributes="0"/>
@@ -132,22 +132,22 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="ALTA" pref="35" max="32767" attributes="0"/>
-                      <Component id="BAJA" max="32767" attributes="0"/>
+                      <Component id="alta" pref="35" max="32767" attributes="0"/>
+                      <Component id="baja" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="CONSULTA" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="consulta" min="-2" pref="35" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="DEVOLVER" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="devolver" min="-2" pref="35" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Component id="PRESTAR" pref="34" max="32767" attributes="0"/>
+                          <Component id="prestar" pref="34" max="32767" attributes="0"/>
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="BajaSocio" min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="AltaSocio" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="bajaSocio" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="altaSocio" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -165,7 +165,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="ALTA">
+        <Component class="javax.swing.JButton" name="alta">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Cantarell" size="14" style="3"/>
@@ -173,10 +173,10 @@
             <Property name="text" type="java.lang.String" value="Alta Publicaci&#xf3;n"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ALTAActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="altaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="BAJA">
+        <Component class="javax.swing.JButton" name="baja">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Cantarell" size="14" style="3"/>
@@ -184,10 +184,10 @@
             <Property name="text" type="java.lang.String" value="Baja Publicaci&#xf3;n"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BAJAActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bajaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="CONSULTA">
+        <Component class="javax.swing.JButton" name="consulta">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Cantarell" size="14" style="3"/>
@@ -195,10 +195,10 @@
             <Property name="text" type="java.lang.String" value="Consulta Publicaciones"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CONSULTAActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consultaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="PRESTAR">
+        <Component class="javax.swing.JButton" name="prestar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Cantarell" size="14" style="3"/>
@@ -206,10 +206,10 @@
             <Property name="text" type="java.lang.String" value="Pr&#xe9;stamo"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PRESTARActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="prestarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="DEVOLVER">
+        <Component class="javax.swing.JButton" name="devolver">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Cantarell" size="14" style="3"/>
@@ -217,10 +217,10 @@
             <Property name="text" type="java.lang.String" value="Devoluci&#xf3;n"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DEVOLVERActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="devolverActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="AltaSocio">
+        <Component class="javax.swing.JButton" name="altaSocio">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Cantarell" size="14" style="3"/>
@@ -228,10 +228,10 @@
             <Property name="text" type="java.lang.String" value="Alta Socio"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AltaSocioActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="altaSocioActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="BajaSocio">
+        <Component class="javax.swing.JButton" name="bajaSocio">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Cantarell" size="14" style="3"/>
@@ -239,7 +239,7 @@
             <Property name="text" type="java.lang.String" value="Baja Socio"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BajaSocioActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bajaSocioActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="altaAutor">

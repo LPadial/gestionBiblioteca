@@ -19,8 +19,8 @@ public abstract class ProyectosTesis extends Publicacion {
     private GregorianCalendar fechaLectura;
     
     //CONSTRUCTOR.
-    public ProyectosTesis(String tribunal, String entidad, String departamento, double calificacion, GregorianCalendar fechaLectura, String codigo, String ISBN, String titulo, String autores, GregorianCalendar fechaPublicación, String fotografia, int paginas, boolean coleccion, String materia, String observaciones) {
-        super(codigo, ISBN, titulo, autores, fechaPublicación, fotografia, paginas, coleccion, materia, observaciones);
+    public ProyectosTesis(String tribunal, String entidad, String departamento, double calificacion, GregorianCalendar fechaLectura, String codigo, String ISBN, String titulo, String autores, GregorianCalendar fechaPublicación, String fotografia, int paginas, boolean coleccion, String materia, String observaciones, String codAutor) {
+        super(codigo, ISBN, titulo, autores, fechaPublicación, fotografia, paginas, coleccion, materia, observaciones, codAutor);
         this.tribunal = tribunal;
         this.entidad = entidad;
         this.departamento = departamento;

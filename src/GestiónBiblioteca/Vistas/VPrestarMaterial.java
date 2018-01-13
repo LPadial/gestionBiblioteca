@@ -5,6 +5,9 @@ import GestiónBiblioteca.AbstractFactory.MaterialFactory;
 import GestiónBiblioteca.AbstractFactory.Ordenador;
 import GestiónBiblioteca.AbstractFactory.Tablet;
 import GestiónBiblioteca.AbstractFactory.WindowsFactory;
+import GestiónBiblioteca.Adapter.AdaptadorFecha;
+import GestiónBiblioteca.Adapter.Fecha;
+import GestiónBiblioteca.Adapter.FechaLetras;
 import GestiónBiblioteca.Biblioteca;
 import java.awt.HeadlessException;
 import java.util.Date;
@@ -15,6 +18,8 @@ import javax.swing.JOptionPane;
 public class VPrestarMaterial extends javax.swing.JFrame {
 
     private final JFrame principal;
+    //Adaptador fecha
+    Fecha fecha = null;
 
     public VPrestarMaterial(JFrame ventana) {
         initComponents();
@@ -193,7 +198,7 @@ public class VPrestarMaterial extends javax.swing.JFrame {
             String auxMarca = (String) marca.getSelectedItem();
 
             Biblioteca.prestamoMaterial(auxMaterial, auxMarca, codigosocio, fprestar);
-            JOptionPane.showMessageDialog(this, "El préstamo se efectuó correctamente");
+            JOptionPane.showMessageDialog(this, "El préstamo se efectuó correctamente, el material deberá ser devuelto antes del día " + fecha.toString());
         } catch (HeadlessException ex) {
             JOptionPane.showMessageDialog(this, "Error" + ex.getMessage(), "Mensaje", JOptionPane.ERROR_MESSAGE);
         }
@@ -224,32 +229,43 @@ public class VPrestarMaterial extends javax.swing.JFrame {
         //SELECCIONA TIPO DE MATERIAL.
         Integer tipoMaterial = material.getSelectedIndex();
         Integer tipoMarca = marca.getSelectedIndex();
+        
 
         switch (tipoMarca) {
 
             case 1:
                 factory = new WindowsFactory(); //Creamos factoria concreta para Windows
-                if (tipoMaterial == 1) {
-                    fo = factory.creaPrestarOrdenador();
-                    System.out.println(fo.fechaDeExpiracion());
-                }
+                switch (tipoMaterial) {
+                    case 1:
+                        fo = factory.creaPrestarOrdenador();
+                        //Se adapta la fecha que produce el Date a formato numérico español (Día/Mes/Año)
+                        fecha = new AdaptadorFecha(new FechaLetras(fo.fechaDeExpiracion()));
+                        break;
 
-                if (tipoMaterial == 2) {
-                    ft = factory.creaPrestarTablet();
-                    System.out.println(ft.fechaDeExpiracion());
+                    case 2:
+                        ft = factory.creaPrestarTablet();
+                        //Se adapta la fecha que produce el Date a formato numérico español (Día/Mes/Año)
+                        fecha = new AdaptadorFecha(new FechaLetras(ft.fechaDeExpiracion()));
+                        break;
                 }
+                break;
 
             case 2:
                 factory = new MacFactory(); //Creamos factoria concreta para Windows
-                if (tipoMaterial == 1) {
-                    fo = factory.creaPrestarOrdenador();
-                    System.out.println(fo.fechaDeExpiracion());
-                }
+                switch (tipoMaterial) {
+                    case 1:
+                        fo = factory.creaPrestarOrdenador();
+                        //Se adapta la fecha que produce el Date a formato numérico español (Día/Mes/Año)
+                        fecha = new AdaptadorFecha(new FechaLetras(fo.fechaDeExpiracion()));
+                        break;
 
-                if (tipoMaterial == 2) {
-                    ft = factory.creaPrestarTablet();
-                    System.out.println(ft.fechaDeExpiracion());
+                    case 2:
+                        ft = factory.creaPrestarTablet();
+                        //Se adapta la fecha que produce el Date a formato numérico español (Día/Mes/Año)
+                        fecha = new AdaptadorFecha(new FechaLetras(ft.fechaDeExpiracion()));
+                        break;
                 }
+                break;
         }
 
 

@@ -264,6 +264,8 @@ public class VConsultaPublicacion extends javax.swing.JFrame {
         adisponible = new javax.swing.JTextField();
         npublicacion = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        codAutor = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("\"BIBLIOTECA UNIVERSITARIA\"");
@@ -564,6 +566,16 @@ public class VConsultaPublicacion extends javax.swing.JFrame {
         jLabel26.setForeground(new java.awt.Color(0, 51, 102));
         jLabel26.setText("N.PUBLICACIÓN:");
 
+        jLabel30.setFont(new java.awt.Font("Cambria", 3, 12)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(0, 51, 102));
+        jLabel30.setText("CÓDIGO AUTOR:");
+
+        codAutor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                codAutorActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -706,7 +718,11 @@ public class VConsultaPublicacion extends javax.swing.JFrame {
                         .addGap(9, 9, 9)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel28))))
+                            .addComponent(jLabel28)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(codAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(99, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(373, 373, 373)
@@ -764,6 +780,10 @@ public class VConsultaPublicacion extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel17)
                                     .addComponent(tribunal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel30)
+                                    .addComponent(codAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(examinar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
@@ -844,7 +864,7 @@ public class VConsultaPublicacion extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel13)
                             .addComponent(localizacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(materia, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel29))
@@ -980,6 +1000,7 @@ public class VConsultaPublicacion extends javax.swing.JFrame {
                 GregorianCalendar auxFecha = new GregorianCalendar();
                 auxFecha.setTime((Date) fecha.getValue());
                 String auxObservaciones = observaciones.getText();
+                String auxCodAutor = codAutor.getText();
 
                 if (objpubli.getClass().getSimpleName().equals("Libro")) {
 
@@ -988,7 +1009,8 @@ public class VConsultaPublicacion extends javax.swing.JFrame {
                     String auxContenido = contenido.getText();
                     String auxEdicion = edicion.getText();
                     String auxLocalizacion = localizacion.getText();
-                    Biblioteca.modificaLibro(lib, auxEditorial, auxLocalidad, auxContenido, auxEdicion, auxLocalizacion, auxCodigo, auxIsbn, auxTitulo, auxAutores, auxFecha, auxPaginas, auxColeccion, auxMateria, foto, auxObservaciones);
+                    
+                    Biblioteca.modificaLibro(lib, auxEditorial, auxLocalidad, auxContenido, auxEdicion, auxLocalizacion, auxCodigo, auxIsbn, auxTitulo, auxAutores, auxFecha, auxPaginas, auxColeccion, auxMateria, foto, auxObservaciones, auxCodAutor);
                 }
 
                 if (objpubli.getClass().getSimpleName().equals("Revista")) {
@@ -999,7 +1021,7 @@ public class VConsultaPublicacion extends javax.swing.JFrame {
                     Integer auxNpublicacion = Integer.parseInt(auxNpublicacion1);
                     String auxADisponible1 = adisponible.getText();
                     Integer auxADisponible = Integer.parseInt(auxADisponible1);
-                    Biblioteca.modificaRevista(rev, auxCodigo, auxIsbn, auxTitulo, auxAutores, auxFecha, auxPaginas, auxColeccion, auxMateria, foto, auxObservaciones, auxPeriocidad, auxVolumen, auxADisponible, auxNpublicacion);
+                    Biblioteca.modificaRevista(rev, auxCodigo, auxIsbn, auxTitulo, auxAutores, auxFecha, auxPaginas, auxColeccion, auxMateria, foto, auxObservaciones, auxPeriocidad, auxVolumen, auxADisponible, auxNpublicacion, auxCodAutor);
                 }
 
                 if (objpubli.getClass().getSimpleName().equals("ProyectoFinal")) {
@@ -1012,7 +1034,7 @@ public class VConsultaPublicacion extends javax.swing.JFrame {
                     Double auxCalificacion1 = Double.parseDouble(auxCalificacion);
                     GregorianCalendar auxLectura = new GregorianCalendar();
                     auxLectura.setTime((Date) lectura.getValue());
-                    Biblioteca.modificaProyecto(pro, auxCodigo, auxIsbn, auxTitulo, auxAutores, auxFecha, auxPaginas, auxColeccion, auxMateria, foto, auxObservaciones, auxTitulacion, auxTribunal, auxEntidad, auxDepartamento, auxCalificacion1, auxLectura);
+                    Biblioteca.modificaProyecto(pro, auxCodigo, auxIsbn, auxTitulo, auxAutores, auxFecha, auxPaginas, auxColeccion, auxMateria, foto, auxObservaciones, auxTitulacion, auxTribunal, auxEntidad, auxDepartamento, auxCalificacion1, auxLectura, auxCodAutor);
                 }
 
                 if (objpubli.getClass().getSimpleName().equals("Tesis")) {
@@ -1025,10 +1047,10 @@ public class VConsultaPublicacion extends javax.swing.JFrame {
                     GregorianCalendar auxLectura = new GregorianCalendar();
                     auxLectura.setTime((Date) lectura.getValue());
 
-                    Biblioteca.modificaTesis(tes, auxCodigo, auxIsbn, auxTitulo, auxAutores, auxFecha, auxPaginas, auxColeccion, auxMateria, foto, auxObservaciones, auxTribunal, auxEntidad, auxDepartamento, auxCalificacion1, auxLectura, auxPrograma);
+                    Biblioteca.modificaTesis(tes, auxCodigo, auxIsbn, auxTitulo, auxAutores, auxFecha, auxPaginas, auxColeccion, auxMateria, foto, auxObservaciones, auxTribunal, auxEntidad, auxDepartamento, auxCalificacion1, auxLectura, auxPrograma, auxCodAutor);
 
                 }
-                Biblioteca.modificaPublicacion(objpubli, auxCodigo, auxIsbn, auxTitulo, auxAutores, auxFecha, auxPaginas, auxColeccion, auxMateria, foto, auxObservaciones);
+                Biblioteca.modificaPublicacion(objpubli, auxCodigo, auxIsbn, auxTitulo, auxAutores, auxFecha, auxPaginas, auxColeccion, auxMateria, foto, auxObservaciones, auxCodAutor);
 
                 JOptionPane.showMessageDialog(this, "Publicación modificada: ", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
             } else {
@@ -1081,6 +1103,10 @@ public class VConsultaPublicacion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_adisponibleActionPerformed
 
+    private void codAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codAutorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_codAutorActionPerformed
+
     private void getImagen() {
         try {
             fotos.setSize(230, 270);
@@ -1098,6 +1124,7 @@ public class VConsultaPublicacion extends javax.swing.JFrame {
     private javax.swing.JButton antes;
     private javax.swing.JTextField autores;
     private javax.swing.JTextField calificacion;
+    private javax.swing.JTextField codAutor;
     private javax.swing.JTextField codigo;
     private javax.swing.JCheckBox coleccion;
     private javax.swing.JTextArea contenido;
@@ -1132,6 +1159,7 @@ public class VConsultaPublicacion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

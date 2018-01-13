@@ -1,7 +1,7 @@
-
 package GestiónBiblioteca.Vistas;
 
 import GestiónBiblioteca.Biblioteca;
+import GestiónBiblioteca.Observer.Observer;
 import GestiónBiblioteca.Tesis;
 import java.awt.HeadlessException;
 import java.io.File;
@@ -14,7 +14,8 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class VTesis extends javax.swing.JFrame {
-    private JFrame principal;
+
+    private final JFrame principal;
 
     public VTesis(JFrame ventana) {
         initComponents();
@@ -27,44 +28,46 @@ public class VTesis extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ALTA = new javax.swing.JButton();
+        alta = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        EXAMINAR = new javax.swing.JButton();
+        examinar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         observaciones = new javax.swing.JTextArea();
         jLabel14 = new javax.swing.JLabel();
         JLabel = new javax.swing.JLabel();
-        FOTO = new javax.swing.JTextField();
+        foto = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        ISBN = new javax.swing.JTextField();
+        isbn = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        PROGRAMA = new javax.swing.JTextField();
-        CODIGO = new javax.swing.JTextField();
-        ENTIDAD = new javax.swing.JTextField();
+        programa = new javax.swing.JTextField();
+        codigo = new javax.swing.JTextField();
+        entidad = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        TRIBUNAL = new javax.swing.JTextField();
-        DEPARTAMENTO = new javax.swing.JTextField();
+        tribunal = new javax.swing.JTextField();
+        departamento = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        FECHA = new javax.swing.JFormattedTextField();
-        COLLECTION = new javax.swing.JCheckBox();
+        fecha = new javax.swing.JFormattedTextField();
+        collection = new javax.swing.JCheckBox();
         jLabel11 = new javax.swing.JLabel();
-        AUTORES = new javax.swing.JTextField();
-        CALIFICACION = new javax.swing.JTextField();
-        PAGINAS = new javax.swing.JTextField();
+        autores = new javax.swing.JTextField();
+        calificacion = new javax.swing.JTextField();
+        paginas = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        TITULO = new javax.swing.JTextField();
+        titulo = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        MATERIA = new javax.swing.JTextField();
+        materia = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        LECTURA = new javax.swing.JFormattedTextField();
+        lectura = new javax.swing.JFormattedTextField();
+        jLabel19 = new javax.swing.JLabel();
+        codAutor = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("\"BIBLIOTECA UNIVERSITARIA\"");
@@ -74,11 +77,11 @@ public class VTesis extends javax.swing.JFrame {
             }
         });
 
-        ALTA.setFont(new java.awt.Font("Cambria", 3, 14)); // NOI18N
-        ALTA.setText("DAR DE ALTA");
-        ALTA.addActionListener(new java.awt.event.ActionListener() {
+        alta.setFont(new java.awt.Font("Cambria", 3, 14)); // NOI18N
+        alta.setText("DAR DE ALTA");
+        alta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ALTAActionPerformed(evt);
+                altaActionPerformed(evt);
             }
         });
 
@@ -89,10 +92,10 @@ public class VTesis extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        EXAMINAR.setText("Examinar");
-        EXAMINAR.addActionListener(new java.awt.event.ActionListener() {
+        examinar.setText("Examinar");
+        examinar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EXAMINARActionPerformed(evt);
+                examinarActionPerformed(evt);
             }
         });
 
@@ -108,9 +111,9 @@ public class VTesis extends javax.swing.JFrame {
         JLabel.setForeground(new java.awt.Color(0, 51, 102));
         JLabel.setText("OBSERVACIONES:");
 
-        FOTO.addActionListener(new java.awt.event.ActionListener() {
+        foto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FOTOActionPerformed(evt);
+                fotoActionPerformed(evt);
             }
         });
 
@@ -118,9 +121,9 @@ public class VTesis extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 51, 102));
         jLabel4.setText("TÍTULO:");
 
-        ISBN.addActionListener(new java.awt.event.ActionListener() {
+        isbn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ISBNActionPerformed(evt);
+                isbnActionPerformed(evt);
             }
         });
 
@@ -140,21 +143,21 @@ public class VTesis extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 51, 102));
         jLabel5.setText("AUTORES:");
 
-        PROGRAMA.addActionListener(new java.awt.event.ActionListener() {
+        programa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PROGRAMAActionPerformed(evt);
+                programaActionPerformed(evt);
             }
         });
 
-        CODIGO.addActionListener(new java.awt.event.ActionListener() {
+        codigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CODIGOActionPerformed(evt);
+                codigoActionPerformed(evt);
             }
         });
 
-        ENTIDAD.addActionListener(new java.awt.event.ActionListener() {
+        entidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ENTIDADActionPerformed(evt);
+                entidadActionPerformed(evt);
             }
         });
 
@@ -162,15 +165,15 @@ public class VTesis extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(0, 51, 102));
         jLabel9.setText("TRIBUNAL:");
 
-        TRIBUNAL.addActionListener(new java.awt.event.ActionListener() {
+        tribunal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TRIBUNALActionPerformed(evt);
+                tribunalActionPerformed(evt);
             }
         });
 
-        DEPARTAMENTO.addActionListener(new java.awt.event.ActionListener() {
+        departamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DEPARTAMENTOActionPerformed(evt);
+                departamentoActionPerformed(evt);
             }
         });
 
@@ -190,11 +193,11 @@ public class VTesis extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 51, 102));
         jLabel2.setText("CÓDIGO:");
 
-        FECHA.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        fecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
 
-        COLLECTION.addActionListener(new java.awt.event.ActionListener() {
+        collection.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                COLLECTIONActionPerformed(evt);
+                collectionActionPerformed(evt);
             }
         });
 
@@ -202,21 +205,21 @@ public class VTesis extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(0, 51, 102));
         jLabel11.setText("DEPARTAMENTO:");
 
-        AUTORES.addActionListener(new java.awt.event.ActionListener() {
+        autores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AUTORESActionPerformed(evt);
+                autoresActionPerformed(evt);
             }
         });
 
-        CALIFICACION.addActionListener(new java.awt.event.ActionListener() {
+        calificacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CALIFICACIONActionPerformed(evt);
+                calificacionActionPerformed(evt);
             }
         });
 
-        PAGINAS.addActionListener(new java.awt.event.ActionListener() {
+        paginas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PAGINASActionPerformed(evt);
+                paginasActionPerformed(evt);
             }
         });
 
@@ -228,17 +231,17 @@ public class VTesis extends javax.swing.JFrame {
         jLabel13.setForeground(new java.awt.Color(0, 51, 102));
         jLabel13.setText("FECHA LECTURA:");
 
-        TITULO.addActionListener(new java.awt.event.ActionListener() {
+        titulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TITULOActionPerformed(evt);
+                tituloActionPerformed(evt);
             }
         });
 
         getImagen();
 
-        MATERIA.addActionListener(new java.awt.event.ActionListener() {
+        materia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MATERIAActionPerformed(evt);
+                materiaActionPerformed(evt);
             }
         });
 
@@ -246,12 +249,16 @@ public class VTesis extends javax.swing.JFrame {
         jLabel18.setForeground(new java.awt.Color(0, 51, 102));
         jLabel18.setText("MATERIA:");
 
-        LECTURA.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        LECTURA.addActionListener(new java.awt.event.ActionListener() {
+        lectura.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        lectura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LECTURAActionPerformed(evt);
+                lecturaActionPerformed(evt);
             }
         });
+
+        jLabel19.setFont(new java.awt.Font("Cambria", 3, 12)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(0, 51, 102));
+        jLabel19.setText("CODIGO AUTOR:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -263,23 +270,23 @@ public class VTesis extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(AUTORES, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(autores, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(FECHA))
+                        .addComponent(fecha))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(CODIGO, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ISBN, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(isbn, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(TITULO, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12)
@@ -289,32 +296,36 @@ public class VTesis extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
-                                .addComponent(ENTIDAD, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(entidad, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(LECTURA, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lectura, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(TRIBUNAL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(DEPARTAMENTO, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(CALIFICACION, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addComponent(tribunal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(departamento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(calificacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(PAGINAS, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(paginas, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addGap(122, 122, 122)
-                        .addComponent(COLLECTION))
+                        .addComponent(collection))
                     .addComponent(jLabel10)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(PROGRAMA, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(programa, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel19))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(MATERIA, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(materia, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                            .addComponent(codAutor))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -323,7 +334,7 @@ public class VTesis extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel14)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(EXAMINAR, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(examinar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(22, 22, 22))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -336,7 +347,7 @@ public class VTesis extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(FOTO, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(foto, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
@@ -347,78 +358,82 @@ public class VTesis extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(CODIGO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(ISBN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(isbn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(TITULO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(AUTORES, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(autores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(FECHA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
-                            .addComponent(PAGINAS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(paginas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8)
-                            .addComponent(COLLECTION)))
+                            .addComponent(collection)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(TRIBUNAL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tribunal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JLabel))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
-                            .addComponent(ENTIDAD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(entidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
-                            .addComponent(DEPARTAMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(departamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(CALIFICACION)
+                            .addComponent(calificacion)
                             .addComponent(jLabel12))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel14)
-                                    .addComponent(EXAMINAR)))
+                                    .addComponent(examinar)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel13))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LECTURA, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(lectura, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel15)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(3, 3, 3)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(PROGRAMA, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-                                    .addComponent(FOTO))))
+                                    .addComponent(programa, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                                    .addComponent(foto))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(MATERIA, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(materia, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel18))
-                        .addGap(29, 29, 29))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel19)
+                            .addComponent(codAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(1, 1, 1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -434,148 +449,156 @@ public class VTesis extends javax.swing.JFrame {
                         .addGap(139, 139, 139)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27)
-                        .addComponent(ALTA, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(alta, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ALTA, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(alta, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(608, 741));
+        setSize(new java.awt.Dimension(608, 785));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void DEPARTAMENTOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DEPARTAMENTOActionPerformed
+    private void departamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_departamentoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DEPARTAMENTOActionPerformed
+    }//GEN-LAST:event_departamentoActionPerformed
 
-    private void ENTIDADActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ENTIDADActionPerformed
+    private void entidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entidadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ENTIDADActionPerformed
+    }//GEN-LAST:event_entidadActionPerformed
 
-    private void TRIBUNALActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TRIBUNALActionPerformed
+    private void tribunalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tribunalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TRIBUNALActionPerformed
+    }//GEN-LAST:event_tribunalActionPerformed
 
-    private void PROGRAMAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PROGRAMAActionPerformed
+    private void programaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PROGRAMAActionPerformed
+    }//GEN-LAST:event_programaActionPerformed
 
-    private void TITULOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TITULOActionPerformed
+    private void tituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tituloActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TITULOActionPerformed
+    }//GEN-LAST:event_tituloActionPerformed
 
-    private void CALIFICACIONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CALIFICACIONActionPerformed
+    private void calificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calificacionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CALIFICACIONActionPerformed
+    }//GEN-LAST:event_calificacionActionPerformed
 
-    private void AUTORESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AUTORESActionPerformed
+    private void autoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_autoresActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_AUTORESActionPerformed
+    }//GEN-LAST:event_autoresActionPerformed
 
-    private void PAGINASActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PAGINASActionPerformed
+    private void paginasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paginasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PAGINASActionPerformed
+    }//GEN-LAST:event_paginasActionPerformed
 
-    private void CODIGOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CODIGOActionPerformed
+    private void codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CODIGOActionPerformed
+    }//GEN-LAST:event_codigoActionPerformed
 
-    private void ISBNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ISBNActionPerformed
+    private void isbnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isbnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ISBNActionPerformed
+    }//GEN-LAST:event_isbnActionPerformed
 
-    private void FOTOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FOTOActionPerformed
+    private void fotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fotoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FOTOActionPerformed
+    }//GEN-LAST:event_fotoActionPerformed
 
-    private void COLLECTIONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_COLLECTIONActionPerformed
+    private void collectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_collectionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_COLLECTIONActionPerformed
+    }//GEN-LAST:event_collectionActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         // TODO add your handling code here:
-         principal.setVisible(true);
+        principal.setVisible(true);
     }//GEN-LAST:event_formWindowClosed
 
-    private void ALTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ALTAActionPerformed
+    private void altaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altaActionPerformed
         // TODO add your handling code here:
-        try{
-            String programa = PROGRAMA.getText(); 
-            String tribunal = TRIBUNAL.getText();    
-            String entidad = ENTIDAD.getText();
-            String departamento = DEPARTAMENTO.getText();
-            String calificacion1 = CALIFICACION.getText();
-            Double calificacion = Double.parseDouble(calificacion1);  
-           
-            GregorianCalendar lectura = new GregorianCalendar();
-            lectura.setTime((Date)LECTURA.getValue());
-            
-            String codigo = CODIGO.getText();
-            String isbn = ISBN.getText();
-            String titulo = TITULO.getText();  
-            String autores = AUTORES.getText();
-            
-            GregorianCalendar fecha = new GregorianCalendar();
-            fecha.setTime((Date)FECHA.getValue());
-            
-            String foto = FOTO.getText();
-            String paginas1 = PAGINAS.getText();
-            Integer paginas = Integer.parseInt(paginas1);
-            boolean coleccion = COLLECTION.isSelected();                           //VER!!!!!!!!!!!!!!!!!!
-            String materia = MATERIA.getText();
-            String observacion = observaciones.getText();
-            
-            /*String programa, String tribunal, String entidad, String departamento, double calificacion, 
-             * GregorianCalendar fechaLectura, String codigo, String ISBN, String titulo, String autores,
-             * GregorianCalendar fechaPublicación, String fotografia, int paginas, boolean coleccion, 
-             * String materia, String observaciones*/
-            Tesis publi = new Tesis(programa,tribunal,entidad,departamento,calificacion,lectura,codigo,isbn,titulo,autores,fecha,foto,paginas,coleccion,materia,observacion);
-            
-            Biblioteca.altaPublicacion(publi);
-            
-            JOptionPane.showMessageDialog(this, "TESIS dada de alta.", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+        try {
+            String auxPrograma = programa.getText();
+            String auxTribunal = tribunal.getText();
+            String auxEntidad = entidad.getText();
+            String auxDepartamento = departamento.getText();
+            String auxCalificacion1 = calificacion.getText();
+            Double auxCalificacion = Double.parseDouble(auxCalificacion1);
+
+            GregorianCalendar auxLectura = new GregorianCalendar();
+            auxLectura.setTime((Date) lectura.getValue());
+
+            String auxCodigo = codigo.getText();
+            String auxIsbn = isbn.getText();
+            String auxTitulo = titulo.getText();
+            String auxAutores = autores.getText();
+
+            GregorianCalendar auxFecha = new GregorianCalendar();
+            auxFecha.setTime((Date) fecha.getValue());
+
+            String auxFoto = foto.getText();
+            String auxPaginas1 = paginas.getText();
+            Integer auxPaginas = Integer.parseInt(auxPaginas1);
+            boolean auxColeccion = collection.isSelected();                           //VER!!!!!!!!!!!!!!!!!!
+            String auxMateria = materia.getText();
+            String auxObservacion = observaciones.getText();
+            String auxCodAutor = codAutor.getText();
+
+            if (Biblioteca.buscarAutor(auxCodAutor)) {
+                /*String programa, String tribunal, String entidad, String departamento, double calificacion, 
+                 * GregorianCalendar fechaLectura, String codigo, String ISBN, String titulo, String autores,
+                 * GregorianCalendar fechaPublicación, String fotografia, int paginas, boolean coleccion, 
+                 * String materia, String observaciones*/
+                Tesis publi = new Tesis(auxPrograma, auxTribunal, auxEntidad, auxDepartamento, auxCalificacion, auxLectura, auxCodigo, auxIsbn, auxTitulo, auxAutores, auxFecha, auxFoto, auxPaginas, auxColeccion, auxMateria, auxObservacion, auxCodAutor);
+
+                Biblioteca.altaPublicacion(publi);
+
+                //comunicacion con el observer
+                Observer.aumentarPublicacionesAutor(auxCodAutor);
+
+                JOptionPane.showMessageDialog(this, "TESIS dada de alta.", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "El código de autor no existe");
+            }
         } catch (HeadlessException | NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Error en alta"+e.getMessage(), "Mensaje", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Error en alta" + e.getMessage(), "Mensaje", JOptionPane.ERROR_MESSAGE);
         }
-            
-    }//GEN-LAST:event_ALTAActionPerformed
 
-    private void MATERIAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MATERIAActionPerformed
+    }//GEN-LAST:event_altaActionPerformed
+
+    private void materiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_MATERIAActionPerformed
+    }//GEN-LAST:event_materiaActionPerformed
 
-    private void LECTURAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LECTURAActionPerformed
+    private void lecturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lecturaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_LECTURAActionPerformed
+    }//GEN-LAST:event_lecturaActionPerformed
 
-    private void EXAMINARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXAMINARActionPerformed
+    private void examinarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_examinarActionPerformed
         // BOTÓN CON EL QUE SELECCIONAMOS LA IMAGEN QUE DESEAMOS MOSTRAR.
-          String adr="";
-                
-          JFileChooser examinar = new JFileChooser();       //creamos la ventana .
-          FileNameExtensionFilter filtroImagen=new FileNameExtensionFilter("JPG, PNG & GIF","jpg","png","gif");
-          examinar.setFileFilter(filtroImagen); //Filtro para que sólo se muestren archivos con una determinada extensión.
-          int seleccion = examinar.showSaveDialog(examinar);
-          //Comprobar si se ha pulsado EXAMINAR.      
-          if (seleccion == JFileChooser.APPROVE_OPTION){
-                
-                File fichero = examinar.getSelectedFile(); //Crear un objeto File con el archivo elegido
-                adr =fichero.getAbsolutePath();
-                FOTO.setText(adr);                         //Mostrar el nombre del archvivo en un campo de texto
-          } 
-    }//GEN-LAST:event_EXAMINARActionPerformed
+        String adr = "";
+
+        JFileChooser auxExaminar = new JFileChooser();       //creamos la ventana .
+        FileNameExtensionFilter filtroImagen = new FileNameExtensionFilter("JPG, PNG & GIF", "jpg", "png", "gif");
+        auxExaminar.setFileFilter(filtroImagen); //Filtro para que sólo se muestren archivos con una determinada extensión.
+        int seleccion = auxExaminar.showSaveDialog(examinar);
+        //Comprobar si se ha pulsado EXAMINAR.      
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+
+            File fichero = auxExaminar.getSelectedFile(); //Crear un objeto File con el archivo elegido
+            adr = fichero.getAbsolutePath();
+            foto.setText(adr);                         //Mostrar el nombre del archvivo en un campo de texto
+        }
+    }//GEN-LAST:event_examinarActionPerformed
 
     private void getImagen() {
         try {
@@ -586,26 +609,22 @@ public class VTesis extends javax.swing.JFrame {
             jLabel17.setIcon(imgRedimensionada);
         } catch (Exception e) {
             System.out.println("Error: " + e.toString());
-        }}
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ALTA;
-    private javax.swing.JTextField AUTORES;
-    private javax.swing.JTextField CALIFICACION;
-    private javax.swing.JTextField CODIGO;
-    private javax.swing.JCheckBox COLLECTION;
-    private javax.swing.JTextField DEPARTAMENTO;
-    private javax.swing.JTextField ENTIDAD;
-    private javax.swing.JButton EXAMINAR;
-    private javax.swing.JFormattedTextField FECHA;
-    private javax.swing.JTextField FOTO;
-    private javax.swing.JTextField ISBN;
     private javax.swing.JLabel JLabel;
-    private javax.swing.JFormattedTextField LECTURA;
-    private javax.swing.JTextField MATERIA;
-    private javax.swing.JTextField PAGINAS;
-    private javax.swing.JTextField PROGRAMA;
-    private javax.swing.JTextField TITULO;
-    private javax.swing.JTextField TRIBUNAL;
+    private javax.swing.JButton alta;
+    private javax.swing.JTextField autores;
+    private javax.swing.JTextField calificacion;
+    private javax.swing.JTextField codAutor;
+    private javax.swing.JTextField codigo;
+    private javax.swing.JCheckBox collection;
+    private javax.swing.JTextField departamento;
+    private javax.swing.JTextField entidad;
+    private javax.swing.JButton examinar;
+    private javax.swing.JFormattedTextField fecha;
+    private javax.swing.JTextField foto;
+    private javax.swing.JTextField isbn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -615,6 +634,7 @@ public class VTesis extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -625,6 +645,12 @@ public class VTesis extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JFormattedTextField lectura;
+    private javax.swing.JTextField materia;
     private javax.swing.JTextArea observaciones;
+    private javax.swing.JTextField paginas;
+    private javax.swing.JTextField programa;
+    private javax.swing.JTextField titulo;
+    private javax.swing.JTextField tribunal;
     // End of variables declaration//GEN-END:variables
 }

@@ -36,7 +36,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="VOLVER" min="-2" max="-2" attributes="0"/>
+                      <Component id="volver" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
@@ -59,19 +59,19 @@
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Component id="jPanel1" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="VOLVER" min="-2" max="-2" attributes="0"/>
+              <Component id="volver" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="VOLVER">
+    <Component class="javax.swing.JButton" name="volver">
       <Properties>
         <Property name="text" type="java.lang.String" value="VOLVER"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VOLVERActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="volverActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
@@ -111,20 +111,20 @@
                           </Group>
                           <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="CODIGO" max="32767" attributes="0"/>
-                              <Component id="CODIG" pref="162" max="32767" attributes="0"/>
-                              <Component id="CODIG2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="codigo1" max="32767" attributes="0"/>
+                              <Component id="codigo2" pref="162" max="32767" attributes="0"/>
+                              <Component id="codigo3" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
-                          <Component id="BUSCAR" min="-2" max="-2" attributes="0"/>
+                          <Component id="buscar" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="DESACTIVAR" max="32767" attributes="0"/>
-                              <Component id="ACTIVAR" max="32767" attributes="0"/>
+                              <Component id="desactivar" max="32767" attributes="0"/>
+                              <Component id="activar" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -138,24 +138,24 @@
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel2" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                      <Component id="CODIGO" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="codigo1" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="BUSCAR" min="-2" max="-2" attributes="0"/>
+                  <Component id="buscar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                      <Component id="CODIG" min="-2" max="-2" attributes="0"/>
+                      <Component id="codigo2" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="DESACTIVAR" min="-2" max="-2" attributes="0"/>
+                  <Component id="desactivar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="CODIG2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="codigo3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="8" max="32767" attributes="0"/>
-                  <Component id="ACTIVAR" min="-2" max="-2" attributes="0"/>
+                  <Component id="activar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -184,33 +184,33 @@
             <Property name="text" type="java.lang.String" value="Buscar Autor:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="CODIGO">
+        <Component class="javax.swing.JTextField" name="codigo1">
           <Properties>
             <Property name="text" type="java.lang.String" value="C&#xf3;digo del autor"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CODIGOActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="codigo1ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="CODIG">
+        <Component class="javax.swing.JTextField" name="codigo2">
           <Properties>
             <Property name="text" type="java.lang.String" value="C&#xf3;digo del Autor"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="BUSCAR">
+        <Component class="javax.swing.JButton" name="buscar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Buscar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BUSCARActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="DESACTIVAR">
+        <Component class="javax.swing.JButton" name="desactivar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Desactivar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DESACTIVARActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="desactivarActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
@@ -224,17 +224,17 @@
             <Property name="text" type="java.lang.String" value="Activar Autor:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="CODIG2">
+        <Component class="javax.swing.JTextField" name="codigo3">
           <Properties>
             <Property name="text" type="java.lang.String" value="C&#xf3;digo de Autor"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="ACTIVAR">
+        <Component class="javax.swing.JButton" name="activar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Activar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ACTIVARActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="activarActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

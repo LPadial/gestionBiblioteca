@@ -45,4 +45,8 @@ public class Autor implements Serializable {
     public String getCodigo() {
         return this.codigo;
     }
+    
+    public void aumentarPublicaciones(){
+        this.publicaciones++;
+    }
 }

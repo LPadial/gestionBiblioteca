@@ -1,4 +1,3 @@
-
 package GestiónBiblioteca.Vistas;
 
 import GestiónBiblioteca.Biblioteca;
@@ -10,13 +9,16 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class VPrestarPublicacion extends javax.swing.JFrame {
-private JFrame principal;
+
+    private final JFrame principal;
+
     public VPrestarPublicacion(JFrame ventana) {
         initComponents();
-         principal = ventana;
+        principal = ventana;
         principal.setVisible(false);
         this.setVisible(true);
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -25,12 +27,12 @@ private JFrame principal;
         PRESTAR = new javax.swing.JButton();
         VOLVER = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        FECHAP = new javax.swing.JFormattedTextField();
+        fechaP = new javax.swing.JFormattedTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        CODIGOP = new javax.swing.JTextField();
-        CODIGOS = new javax.swing.JTextField();
+        codigoP = new javax.swing.JTextField();
+        codigoS = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("\"BIBLIOTECA UNIVERSITARIA\"");
@@ -60,10 +62,10 @@ private JFrame principal;
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
-        FECHAP.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        FECHAP.addActionListener(new java.awt.event.ActionListener() {
+        fechaP.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        fechaP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FECHAPActionPerformed(evt);
+                fechaPActionPerformed(evt);
             }
         });
 
@@ -80,15 +82,15 @@ private JFrame principal;
         jLabel4.setForeground(new java.awt.Color(0, 51, 102));
         jLabel4.setText("Fecha de Préstamo: ");
 
-        CODIGOP.addActionListener(new java.awt.event.ActionListener() {
+        codigoP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CODIGOPActionPerformed(evt);
+                codigoPActionPerformed(evt);
             }
         });
 
-        CODIGOS.addActionListener(new java.awt.event.ActionListener() {
+        codigoS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CODIGOSActionPerformed(evt);
+                codigoSActionPerformed(evt);
             }
         });
 
@@ -104,9 +106,9 @@ private JFrame principal;
                     .addComponent(jLabel4))
                 .addGap(51, 51, 51)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(CODIGOP, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
-                    .addComponent(CODIGOS)
-                    .addComponent(FECHAP))
+                    .addComponent(codigoP, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
+                    .addComponent(codigoS)
+                    .addComponent(fechaP))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -115,14 +117,14 @@ private JFrame principal;
                 .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(CODIGOP, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(codigoP, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CODIGOS, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(codigoS, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FECHAP, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fechaP, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addContainerGap(58, Short.MAX_VALUE))
         );
@@ -173,45 +175,43 @@ private JFrame principal;
     private void PRESTARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESTARActionPerformed
         // BOTÓN Q TE PERMITE PRESTAR.
         try {
-        String codigosocio = CODIGOS.getText();
-        String codigoPubli = CODIGOP.getText();
-        GregorianCalendar fprestar = new GregorianCalendar();
-        fprestar.setTime((Date)FECHAP.getValue());
-        
+            String codigosocio = codigoS.getText();
+            String codigoPubli = codigoP.getText();
+            GregorianCalendar fprestar = new GregorianCalendar();
+            fprestar.setTime((Date) fechaP.getValue());
+
             Biblioteca.prestamoPublicacion(codigoPubli, codigosocio, fprestar);
-            JOptionPane.showMessageDialog(this,"El préstamo se efectuó correctamente");
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(this, "Error"+ex.getMessage(), "Mensaje", JOptionPane.ERROR_MESSAGE);
-        }catch(HeadlessException e){
-            JOptionPane.showMessageDialog(this, "Error"+e.getMessage(), "Mensaje", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "El préstamo se efectuó correctamente");
+        } catch (IOException | HeadlessException ex) {
+            JOptionPane.showMessageDialog(this, "Error" + ex.getMessage(), "Mensaje", JOptionPane.ERROR_MESSAGE);
         }
-        
-        
+
+
     }//GEN-LAST:event_PRESTARActionPerformed
 
-    private void CODIGOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CODIGOSActionPerformed
+    private void codigoSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoSActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CODIGOSActionPerformed
+    }//GEN-LAST:event_codigoSActionPerformed
 
-    private void CODIGOPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CODIGOPActionPerformed
+    private void codigoPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoPActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CODIGOPActionPerformed
+    }//GEN-LAST:event_codigoPActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         // TODO add your handling code here:
         principal.setVisible(true);
     }//GEN-LAST:event_formWindowClosed
 
-    private void FECHAPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FECHAPActionPerformed
+    private void fechaPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fechaPActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FECHAPActionPerformed
+    }//GEN-LAST:event_fechaPActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField CODIGOP;
-    private javax.swing.JTextField CODIGOS;
-    private javax.swing.JFormattedTextField FECHAP;
     private javax.swing.JButton PRESTAR;
     private javax.swing.JButton VOLVER;
+    private javax.swing.JTextField codigoP;
+    private javax.swing.JTextField codigoS;
+    private javax.swing.JFormattedTextField fechaP;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -3,13 +3,12 @@ package GestiónBiblioteca.Vistas;
 
 import GestiónBiblioteca.Biblioteca;
 import GestiónBiblioteca.Autor;
-import java.awt.event.ActionEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 
 public class VDesactivarAutor extends javax.swing.JFrame {
-private JFrame principal;
+private final JFrame principal;
     public VDesactivarAutor(JFrame ventana) {
         initComponents();
         principal = ventana;
@@ -21,18 +20,18 @@ private JFrame principal;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        VOLVER = new javax.swing.JButton();
+        volver = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        CODIGO = new javax.swing.JTextField();
-        CODIG = new javax.swing.JTextField();
-        BUSCAR = new javax.swing.JButton();
-        DESACTIVAR = new javax.swing.JButton();
+        codigo1 = new javax.swing.JTextField();
+        codigo2 = new javax.swing.JTextField();
+        buscar = new javax.swing.JButton();
+        desactivar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        CODIG2 = new javax.swing.JTextField();
-        ACTIVAR = new javax.swing.JButton();
+        codigo3 = new javax.swing.JTextField();
+        activar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("\"BIBLIOTECA UNIVERSITARIA\"");
@@ -43,10 +42,10 @@ private JFrame principal;
             }
         });
 
-        VOLVER.setText("VOLVER");
-        VOLVER.addActionListener(new java.awt.event.ActionListener() {
+        volver.setText("VOLVER");
+        volver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VOLVERActionPerformed(evt);
+                volverActionPerformed(evt);
             }
         });
 
@@ -65,26 +64,26 @@ private JFrame principal;
         jLabel2.setForeground(new java.awt.Color(0, 51, 102));
         jLabel2.setText("Buscar Autor:");
 
-        CODIGO.setText("Código del autor");
-        CODIGO.addActionListener(new java.awt.event.ActionListener() {
+        codigo1.setText("Código del autor");
+        codigo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CODIGOActionPerformed(evt);
+                codigo1ActionPerformed(evt);
             }
         });
 
-        CODIG.setText("Código del Autor");
+        codigo2.setText("Código del Autor");
 
-        BUSCAR.setText("Buscar");
-        BUSCAR.addActionListener(new java.awt.event.ActionListener() {
+        buscar.setText("Buscar");
+        buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BUSCARActionPerformed(evt);
+                buscarActionPerformed(evt);
             }
         });
 
-        DESACTIVAR.setText("Desactivar");
-        DESACTIVAR.addActionListener(new java.awt.event.ActionListener() {
+        desactivar.setText("Desactivar");
+        desactivar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DESACTIVARActionPerformed(evt);
+                desactivarActionPerformed(evt);
             }
         });
 
@@ -92,12 +91,12 @@ private JFrame principal;
         jLabel4.setForeground(new java.awt.Color(0, 51, 102));
         jLabel4.setText("Activar Autor:");
 
-        CODIG2.setText("Código de Autor");
+        codigo3.setText("Código de Autor");
 
-        ACTIVAR.setText("Activar");
-        ACTIVAR.addActionListener(new java.awt.event.ActionListener() {
+        activar.setText("Activar");
+        activar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ACTIVARActionPerformed(evt);
+                activarActionPerformed(evt);
             }
         });
 
@@ -115,17 +114,17 @@ private JFrame principal;
                             .addComponent(jLabel4))
                         .addGap(57, 57, 57)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(CODIGO)
-                            .addComponent(CODIG, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
-                            .addComponent(CODIG2)))
+                            .addComponent(codigo1)
+                            .addComponent(codigo2, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                            .addComponent(codigo3)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(167, 167, 167)
-                        .addComponent(BUSCAR))
+                        .addComponent(buscar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(155, 155, 155)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(DESACTIVAR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ACTIVAR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(desactivar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(activar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(49, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -134,21 +133,21 @@ private JFrame principal;
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CODIGO, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(codigo1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BUSCAR)
+                .addComponent(buscar)
                 .addGap(9, 9, 9)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel3)
-                    .addComponent(CODIG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(codigo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(DESACTIVAR)
+                .addComponent(desactivar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(CODIG2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(codigo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                .addComponent(ACTIVAR)
+                .addComponent(activar)
                 .addContainerGap())
         );
 
@@ -160,7 +159,7 @@ private JFrame principal;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(VOLVER))
+                        .addComponent(volver))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(165, 165, 165)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -177,7 +176,7 @@ private JFrame principal;
                 .addGap(29, 29, 29)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(VOLVER)
+                .addComponent(volver)
                 .addContainerGap())
         );
 
@@ -190,20 +189,20 @@ private JFrame principal;
         principal.setVisible(true);
     }//GEN-LAST:event_formWindowClosed
 
-    private void VOLVERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VOLVERActionPerformed
+    private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
         // TODO add your handling code here:
         this.dispose();
-    }//GEN-LAST:event_VOLVERActionPerformed
+    }//GEN-LAST:event_volverActionPerformed
 
-    private void CODIGOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CODIGOActionPerformed
+    private void codigo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigo1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CODIGOActionPerformed
+    }//GEN-LAST:event_codigo1ActionPerformed
 
-    private void BUSCARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BUSCARActionPerformed
+    private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed
         // TODO add your handling code here:
        
-        if (Biblioteca.buscarAutor(CODIGO.getText())){
-            Autor aut = Biblioteca.getAutor(CODIGO.getText());
+        if (Biblioteca.buscarAutor(codigo1.getText())){
+            Autor aut = Biblioteca.getAutor(codigo1.getText());
             String activo;
             if (aut.getActivo()){ activo = "Activo";}
             else {activo = "Inactivo";}
@@ -211,12 +210,12 @@ private JFrame principal;
         } else{
             JOptionPane.showMessageDialog(this, "El no autor existe");
         }
-    }//GEN-LAST:event_BUSCARActionPerformed
+    }//GEN-LAST:event_buscarActionPerformed
 
-    private void DESACTIVARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DESACTIVARActionPerformed
+    private void desactivarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_desactivarActionPerformed
         // TODO add your handling code here:
-        if (Biblioteca.buscarAutor(CODIGO.getText())){
-            Autor aut = Biblioteca.getAutor(CODIGO.getText());
+        if (Biblioteca.buscarAutor(codigo1.getText())){
+            Autor aut = Biblioteca.getAutor(codigo1.getText());
             aut.desactivar();
             
             Biblioteca.quitarAutor(aut.getCodigo());
@@ -226,12 +225,12 @@ private JFrame principal;
         } else{
             JOptionPane.showMessageDialog(this, "El no autor existe");
         }
-    }//GEN-LAST:event_DESACTIVARActionPerformed
+    }//GEN-LAST:event_desactivarActionPerformed
 
-    private void ACTIVARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ACTIVARActionPerformed
+    private void activarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_activarActionPerformed
         // TODO add your handling code here:
-        if (Biblioteca.buscarAutor(CODIGO.getText())){
-            Autor aut = Biblioteca.getAutor(CODIGO.getText());
+        if (Biblioteca.buscarAutor(codigo1.getText())){
+            Autor aut = Biblioteca.getAutor(codigo1.getText());
             aut.activar();
             
             Biblioteca.quitarAutor(aut.getCodigo());
@@ -241,20 +240,20 @@ private JFrame principal;
         } else{
             JOptionPane.showMessageDialog(this, "El no autor existe");
         }
-    }//GEN-LAST:event_ACTIVARActionPerformed
+    }//GEN-LAST:event_activarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ACTIVAR;
-    private javax.swing.JButton BUSCAR;
-    private javax.swing.JTextField CODIG;
-    private javax.swing.JTextField CODIG2;
-    private javax.swing.JTextField CODIGO;
-    private javax.swing.JButton DESACTIVAR;
-    private javax.swing.JButton VOLVER;
+    private javax.swing.JButton activar;
+    private javax.swing.JButton buscar;
+    private javax.swing.JTextField codigo1;
+    private javax.swing.JTextField codigo2;
+    private javax.swing.JTextField codigo3;
+    private javax.swing.JButton desactivar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton volver;
     // End of variables declaration//GEN-END:variables
 }

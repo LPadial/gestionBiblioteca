@@ -19,8 +19,8 @@ public class Libro extends Publicacion{
     private String localizacion;
 
     //CONSTRUCTOR.
-    public Libro(String editorial, String localidad, String contenido, String edicion, String localizacion, String codigo, String ISBN, String titulo, String autores, GregorianCalendar fechaPublicación, String fotografia, int paginas, boolean coleccion, String materia, String observaciones) {
-        super(codigo, ISBN, titulo, autores, fechaPublicación, fotografia, paginas, coleccion, materia, observaciones);
+    public Libro(String editorial, String localidad, String contenido, String edicion, String localizacion, String codigo, String ISBN, String titulo, String autores, GregorianCalendar fechaPublicación, String fotografia, int paginas, boolean coleccion, String materia, String observaciones, String codAutor) {
+        super(codigo, ISBN, titulo, autores, fechaPublicación, fotografia, paginas, coleccion, materia, observaciones, codAutor);
         this.editorial = editorial;
         this.localidad = localidad;
         this.contenido = contenido;

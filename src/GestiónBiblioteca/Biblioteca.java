@@ -92,7 +92,7 @@ public class Biblioteca {
     }
 
     //Función que modifica Las PUBLICACIONES.                                                                    
-    public static boolean modificaPublicacion(Publicacion publi, String p_codigoPubli, String p_isbn, String p_titulo, String p_autores, GregorianCalendar p_fechaPublicación, int p_paginas, boolean p_coleccion, String p_materia, String p_fotografia, String p_observaciones) {
+   public static boolean modificaPublicacion(Publicacion publi, String p_codigoPubli, String p_isbn, String p_titulo, String p_autores, GregorianCalendar p_fechaPublicación, int p_paginas, boolean p_coleccion, String p_materia, String p_fotografia, String p_observaciones, String codAutor) {
         if (publi == null || !publicaciones.contains(publi)) {
             return false;
         }
@@ -103,12 +103,13 @@ public class Biblioteca {
         publi.setFotografia(p_fotografia);
         publi.setPaginas(p_paginas);
         publi.setColeccion(p_coleccion);
-        publi.setObservaciones(p_observaciones);
-
+        publi.setObservaciones(p_observaciones); 
+        publi.setCodAutor(codAutor);
+        
         return true;
-    }
-
-    public static boolean modificaLibro(Libro publi, String p_editorial, String p_localidad, String p_contenido, String p_edicion, String p_localizacion, String p_codigoPubli, String p_isbn, String p_titulo, String p_autores, GregorianCalendar p_fechaPublicación, int p_paginas, boolean p_coleccion, String p_materia, String p_fotografia, String p_observaciones) {
+   }
+   
+ public static boolean modificaLibro(Libro publi, String p_editorial, String p_localidad, String p_contenido, String p_edicion, String p_localizacion, String p_codigoPubli, String p_isbn, String p_titulo, String p_autores, GregorianCalendar p_fechaPublicación, int p_paginas, boolean p_coleccion, String p_materia, String p_fotografia, String p_observaciones, String codAutor) {
         if (publi == null || !libro.contains(publi)) {
             return false;
         }
@@ -119,17 +120,17 @@ public class Biblioteca {
         publi.setFotografia(p_fotografia);
         publi.setPaginas(p_paginas);
         publi.setColeccion(p_coleccion);
-        publi.setObservaciones(p_observaciones);
+        publi.setObservaciones(p_observaciones);   
         publi.setEditorial(p_editorial);
         publi.setLocalidad(p_localidad);
         publi.setContenido(p_contenido);
-        publi.setEdicion(p_edicion);
-
+        publi.setEdicion(p_edicion); 
+        publi.setCodAutor(codAutor);
+        
         return true;
-    }
-
-    public static boolean modificaRevista(Revista publi, String p_codigoPubli, String p_isbn, String p_titulo, String p_autores, GregorianCalendar p_fechaPublicación, int p_paginas, boolean p_coleccion, String p_materia, String p_fotografia, String p_observaciones, String p_periodo, int p_volumen, int p_añoDisponible, int p_npublicacion) {
-        if (publi == null || !revista.contains(publi)) {
+ }
+ public static boolean modificaRevista(Revista publi,String p_codigoPubli, String p_isbn, String p_titulo, String p_autores, GregorianCalendar p_fechaPublicación, int p_paginas, boolean p_coleccion, String p_materia, String p_fotografia, String p_observaciones, String p_periodo, int p_volumen, int p_añoDisponible,int p_npublicacion, String codAutor) {
+     if (publi == null || !revista.contains(publi)) {
             return false;
         }
         publi.setCodigoPubli(p_codigoPubli);
@@ -140,15 +141,17 @@ public class Biblioteca {
         publi.setPaginas(p_paginas);
         publi.setColeccion(p_coleccion);
         publi.setObservaciones(p_observaciones);
-        publi.setPeriodicidad(p_periodo);
+        publi.setPeriodicidad(p_periodo); 
         publi.setVolumen(p_volumen);
         publi.setAñoDisponible(p_añoDisponible);
-        publi.setNumeroPublicacion(p_npublicacion);
+        publi.setNumeroPublicacion(p_npublicacion);  
+        publi.setCodAutor(codAutor);
+        
         return true;
-    }
-
-    public static boolean modificaTesis(Tesis publi, String p_codigoPubli, String p_isbn, String p_titulo, String p_autores, GregorianCalendar p_fechaPublicación, int p_paginas, boolean p_coleccion, String p_materia, String p_fotografia, String p_observaciones, String p_tribunal, String p_entidad, String p_departamento, double p_calificacion, GregorianCalendar p_lectura, String p_programa) {
-        if (publi == null || !tesis.contains(publi)) {
+ }
+ 
+ public static boolean modificaTesis(Tesis publi, String p_codigoPubli, String p_isbn, String p_titulo, String p_autores, GregorianCalendar p_fechaPublicación, int p_paginas, boolean p_coleccion, String p_materia, String p_fotografia, String p_observaciones, String p_tribunal, String p_entidad, String p_departamento, double p_calificacion, GregorianCalendar p_lectura, String p_programa, String codAutor) {
+     if (publi == null || !tesis.contains(publi)) {
             return false;
         }
         publi.setCodigoPubli(p_codigoPubli);
@@ -158,18 +161,20 @@ public class Biblioteca {
         publi.setFotografia(p_fotografia);
         publi.setPaginas(p_paginas);
         publi.setColeccion(p_coleccion);
-        publi.setObservaciones(p_observaciones);
+        publi.setObservaciones(p_observaciones);   
         publi.setTribunal(p_tribunal);
         publi.setEntidad(p_entidad);
         publi.setDepartamento(p_departamento);
         publi.setCalificacion(p_calificacion);
         publi.setFechaLectura(p_lectura);
         publi.setPrograma(p_programa);
+        publi.setCodAutor(codAutor);
+        
         return true;
-    }
-
-    public static boolean modificaProyecto(ProyectoFinal publi, String p_codigoPubli, String p_isbn, String p_titulo, String p_autores, GregorianCalendar p_fechaPublicación, int p_paginas, boolean p_coleccion, String p_materia, String p_fotografia, String p_observaciones, String p_titulacion, String p_tribunal, String p_entidad, String p_departamento, double p_calificacion, GregorianCalendar p_lectura) {
-        if (publi == null || !proyecto.contains(publi)) {
+ }
+ 
+     public static boolean modificaProyecto( ProyectoFinal publi, String p_codigoPubli, String p_isbn, String p_titulo, String p_autores, GregorianCalendar p_fechaPublicación, int p_paginas, boolean p_coleccion, String p_materia, String p_fotografia, String p_observaciones, String p_titulacion, String p_tribunal, String p_entidad, String p_departamento, double p_calificacion, GregorianCalendar p_lectura, String codAutor) {
+     if (publi == null || !proyecto.contains(publi)) {
             return false;
         }
         publi.setCodigoPubli(p_codigoPubli);
@@ -179,16 +184,17 @@ public class Biblioteca {
         publi.setFotografia(p_fotografia);
         publi.setPaginas(p_paginas);
         publi.setColeccion(p_coleccion);
-        publi.setObservaciones(p_observaciones);
+        publi.setObservaciones(p_observaciones);   
         publi.setTribunal(p_tribunal);
         publi.setEntidad(p_entidad);
         publi.setDepartamento(p_departamento);
         publi.setCalificacion(p_calificacion);
         publi.setFechaLectura(p_lectura);
         publi.setTitulacion(p_titulacion);
-
-        return true;
-    }
+        publi.setCodAutor(codAutor);
+     
+     return true;
+     }
     //Función PARA EL PRESTAMO DE PUBLICACIONES.
 
     public static void prestamoPublicacion(String codigoPubli, String codigosocio, GregorianCalendar fprestar) throws IOException {
@@ -339,6 +345,16 @@ public class Biblioteca {
         }
     }
 
+    //Alta de un autor
+    public static boolean AltaAutor(Autor autorO) throws BibliotecaException{      
+           if(!autores.containsKey(autorO.getCodigo())){
+           autores.put(autorO.getCodigo(), autorO);                
+           return true;
+       }else{
+           throw new BibliotecaException(BibliotecaException.AUTOR_EXISTE);
+       }
+   }
+    
     //busca un autor por el codigo
     public static boolean buscarAutor(String codigo) {
         return autores.containsKey(codigo);
@@ -357,6 +373,10 @@ public class Biblioteca {
         autores.put(aut.getCodigo(), aut);
     }
 
+    //Observer
+  // public static void aumentarPublicacionesAutor(String codAutor){
+  //     autores.get(codAutor).aumentarPublicaciones();
+  // }
    
 
 }
